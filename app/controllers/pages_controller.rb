@@ -8,21 +8,24 @@ class PagesController < ApplicationController
   def fitness
   end
 
-  def natation-petit
+  def petit
   end
 
-  def natation-moyen
+  def moyen
   end
 
-  def natation-adulte
+  def adulte
   end
 
-  def bebe-nageur
+  def bebe
   end
 
-  def jardin-aquatique
+  def mention
   end
 
-  def mentions
+  def jardin
+  end
+
+  def staticswims
   end
 end

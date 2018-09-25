@@ -16,33 +16,38 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get natation-petit" do
-    get pages_natation-petit_url
+  test "should get petit" do
+    get pages_petit_url
     assert_response :success
   end
 
-  test "should get natation-moyen" do
-    get pages_natation-moyen_url
+  test "should get moyen" do
+    get pages_moyen_url
     assert_response :success
   end
 
-  test "should get natation-adulte" do
-    get pages_natation-adulte_url
+  test "should get adulte" do
+    get pages_adulte_url
     assert_response :success
   end
 
-  test "should get bebe-nageur" do
-    get pages_bebe-nageur_url
+  test "should get bebe" do
+    get pages_bebe_url
     assert_response :success
   end
 
-  test "should get jardin-aquatique" do
-    get pages_jardin-aquatique_url
+  test "should get mention" do
+    get pages_mention_url
     assert_response :success
   end
 
-  test "should get mentions" do
-    get pages_mentions_url
+  test "should get jardin" do
+    get pages_jardin_url
+    assert_response :success
+  end
+
+  test "should get staticswims" do
+    get pages_staticswims_url
     assert_response :success
   end
 
