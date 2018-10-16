@@ -5,6 +5,12 @@ class PagesController < ApplicationController
   def aquabike
   end
 
+  def aquaboxing
+  end
+
+  def aquaparcours
+  end
+
   def fitness
   end
 
