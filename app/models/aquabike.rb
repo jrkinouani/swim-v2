@@ -1,0 +1,2 @@
+class Aquabike < ApplicationRecord
+end

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :aquabikes, only: [:index, :show]
+
   get 'pages/aquabike' , to: "pages#aquabike"
   get 'pages/aquaboxing' , to: "pages#aquaboxing"
   get 'pages/aquaparcours' , to: "pages#aquaparcours"
