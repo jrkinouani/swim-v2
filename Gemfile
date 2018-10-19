@@ -13,6 +13,8 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
 gem 'devise'
 gem 'rails_admin', '~> 1.3'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
