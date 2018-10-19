@@ -1,4 +1,4 @@
-class AquabikesController < ApllicationController
+class AquabikesController < ApplicationController
   before_action :set_aquabike, only: [:show, :update, :destroy, :edit]
 
   def new
