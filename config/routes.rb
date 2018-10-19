@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :admins, path_names: {
+    sign_in: 'login',
+    sign_out: 'logout',
+    sign_up: 'signup',
+  }
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
-  resources :aquabikes, only: [:index, :show]
+  resources :aquabikes , only: [:index, :show]
 
   get 'pages/aquabike' , to: "pages#aquabike"
   get 'pages/aquaboxing' , to: "pages#aquaboxing"
