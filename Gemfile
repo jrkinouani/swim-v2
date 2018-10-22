@@ -14,6 +14,8 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'rails_admin', '~> 1.3'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+
 
 
 group :development, :test do

@@ -18,7 +18,9 @@
           <li><span class="fa-li"><i class="fas fa-check"></i></span>Occasionnel </li>
           <li><span class="fa-li"><i class="fas fa-check"></i></span>45 minutes</li>
         </ul>
-        <a href="#" class="btn btn-block btn-primary text-uppercase">Réserver</a>
+        <!--<a href="#" class="btn btn-block btn-primary text-uppercase">Réserver</a>-->
+        <%= link_to 'Faire une réservation', new_reservation_path(aquabike_id: @aquabike.id), class: "btn btn-block btn-primary text-uppercase", id: "btn_car_show"%>
+
       </div>
      </div>
     </div>

@@ -1,0 +1,17 @@
+<%= form_for([@aquabike, @aquabike.reservations.new]) do |f| %>
+<div class="row">
+  <div class="col-md-6">
+    <label>Début</label>
+    <%= f.date_field :start_at, readonly: 'true', placeholder: 'jj/mm/aaaa', class: 'form-control' %>
+  </div>
+  <div class="col-md-6">
+    <label>Fin</label>
+    <%= select_tag(:creneau, options_for_select([['All', 1], ['Co', 2], ['Bought', 3], ['View', 4], ['Top API', 5]], selected: :option )) %>
+
+  </div>
+</div>
+     <%= f.hidden_field :aquabike_id, value: @aquabike.id %>
+      #champs caché pour renseigner l’id du logement et le prix
+ <br>
+     <%= f.submit "Demande de réservation ", class: "btn btn-primary" %>
+ <% end %>

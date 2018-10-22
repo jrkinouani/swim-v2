@@ -3,10 +3,11 @@ Rails.application.routes.draw do
     sign_in: 'login',
     sign_out: 'logout',
     sign_up: 'signup',
-  } 
+  }
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   resources :aquabikes , only: [:index, :show]
+  resources :reservations, only: [:index, :show, :new, :create]
 
   get 'pages/aquabike' , to: "pages#aquabike"
   get 'pages/aquaboxing' , to: "pages#aquaboxing"

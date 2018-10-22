@@ -310,7 +310,7 @@ img#logo.navbar-brand
   	-webkit-background-clip: text;
   	-webkit-text-fill-color: transparent;
   }
-  .btn-primary {
+  /*.btn-primary {
   	background-color:transparent;
   	color: #fff;
   	border: 2px solid #fff;
@@ -323,7 +323,7 @@ img#logo.navbar-brand
   	border-color: #52C3F5;
   	color: #FFF;
   	border-radius: 20px;
-  }
+  }*/
 
   .single_portfolio_text{
   	display:inline-block;
@@ -541,26 +541,19 @@ footer p { font-size:13px; color:#CCC; padding-bottom:0px; margin-bottom:8px;}
 .footer_ul2_amrc li a:hover { text-decoration:none;}
 .footer_ul2_amrc li i { margin-top:5px;}
 
-.bottom_border { border-bottom:1px solid #323f45; padding-bottom:20px;}
-.foote_bottom_ul_amrc {
-	list-style-type:none;
-	padding:0px;
-	display:table;
-	margin-top: 10px;
-	margin-right: auto;
-	margin-bottom: 10px;
-	margin-left: auto;
-}
-.foote_bottom_ul_amrc li { display:inline;}
-.foote_bottom_ul_amrc li a { color:#999; margin:0 12px;}
 
-.social_footer_ul { display:table; margin:15px auto 0 auto; list-style-type:none;  }
-.social_footer_ul li { padding-left:20px; padding-top:10px; float:left; }
-.social_footer_ul li a { color:#CCC; border:1px solid #CCC; padding:8px;border-radius:50%;}
-.social_footer_ul li i {  width:20px; height:20px; text-align:center;}
 
 /*page show*/
 h3.title_show
 {
     margin-bottom: 80px;
+}
+/*page reservation */
+#content_reservation
+{
+    margin-top: 100px;
+}
+h3.title_résa
+{
+    margin-top: 200px;
 }
