@@ -35,7 +35,7 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:start_at, :creneau, :aquabike_id)
+    params.require(:reservation).permit(:start_at, :creneau)
   end
 
   def set_reservation
