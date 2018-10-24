@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price: 1
+  start: 2018-10-24
+  aquabike: one
+
+two:
+  price: 1
+  start: 2018-10-24
+  aquabike: two

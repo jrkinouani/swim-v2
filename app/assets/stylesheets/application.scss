@@ -549,11 +549,19 @@ h3.title_show
     margin-bottom: 80px;
 }
 /*page reservation */
-#content_reservation
+#content_page_show
 {
-    margin-top: 100px;
+
+    background-color: #fff;
+    padding-bottom: 30px;
+    padding-top: 30px;
 }
 h3.title_résa
 {
     margin-top: 200px;
+}
+/*page devise admin */
+#page_signup
+{
+    margin-top: 100px;
 }
