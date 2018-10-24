@@ -29,6 +29,7 @@ class ReservationsController < ApplicationController
      @reservation = Reservation.create!(reservation_params)
      aquabike = @reservation.aquabike
      if @reservation.save
+<<<<<<< HEAD
        redirect_to reservation_path(@reservation)
        else
            redirect_to new_reservation_path
@@ -45,4 +46,22 @@ class ReservationsController < ApplicationController
    def set_reservation
      @reservation = Reservation.find(params[:id])
    end
+=======
+       flash[:danger] = 'bravo!'
+     else
+       flash[:danger] = 'Vous avez mal renseigné les champs de textes !'
+     end
+      redirect_to reservation_path(@reservation)
+  end
+
+  private
+
+  def reservation_params
+    params.require(:reservation).permit(:start_at, :creneau)
+  end
+
+  def set_reservation
+    @reservation = Reservation.find(params[:id])
+  end
+>>>>>>> fefacc85b24c98a44600ff749e99d260748b2d19
 end

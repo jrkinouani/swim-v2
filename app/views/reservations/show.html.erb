@@ -4,10 +4,21 @@
     <h3 class="title_show">Récapitulatif de votre réservation </h3>
   </div>
  </div>
+<<<<<<< HEAD
   <div class="row">
    <div class="col-md-offset-4 col-md-4" id="zone_show_resa_title">
     <h3>Du <%= @reservation.start_at %> </h3> <br>
     <h4>Prix total : <span><%= @reservation.price %> euros</span></h4> <br>
     </div>
+=======
+
+ <div class="row">
+   <div class="col-md-offset-4 col-md-4" id="zone_show_resa_title">
+    <h3>Du <%= @reservation.start_at %> </h3> <br>
+    <h4>Prix total : <span><%= @reservation.price %> euros</span></h4> <br>
+    <h3><%= link_to 'Passez au paiement', new_charge_path(reservation_id: @reservation.id)%></h3><br/>
+
+   </div>
+>>>>>>> fefacc85b24c98a44600ff749e99d260748b2d19
  </div>
 </div>
