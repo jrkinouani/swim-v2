@@ -299,9 +299,7 @@ img#logo.navbar-brand
     top: 0;
     background-color: rgba( 16, 15, 15, 0.35);
     z-index: 1;
-  }
-
-
+}
 
   .clrd-font{
   	background: #FF512F;
@@ -543,18 +541,17 @@ footer p { font-size:13px; color:#CCC; padding-bottom:0px; margin-bottom:8px;}
 
 
 
-/*page show*/
+/*page show aquabike*/
 h3.title_show
 {
     margin-bottom: 80px;
 }
-/*page reservation */
 #content_page_show
 {
 
     background-color: #fff;
     padding-bottom: 30px;
-    padding-top: 30px;
+
 }
 h3.title_résa
 {
@@ -564,4 +561,30 @@ h3.title_résa
 #page_signup
 {
     margin-top: 100px;
+}
+/*page reeservation */
+aside
+{
+  width: 100%;
+  height: 800px;
+  background-image: url('/saut_enfant.jpg');
+  background-repeat: no-repeat;
+  background-size: center;
+  border: 1px solid red;
+  background-size: cover;
+}
+/*index reservation*/
+#content_page_index
+{
+    margin-top: 240px;
+
+}
+h3.title_résa-index
+{
+    margin-top: 30px;
+}
+main.resa
+{
+    background-color: #52C3F5;
+    height: 600px;
 }

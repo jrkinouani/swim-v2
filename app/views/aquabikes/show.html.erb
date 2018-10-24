@@ -1,7 +1,7 @@
-<article class="pricing py-5" id="banner" data-blink-id="pvb1pxmp5cau7rq4c24yp" style="background-size: cover;background-position: center center;background-repeat: ; height:700px; margin-bottom: 10px: no-repeat;background-image: url(/swim.jpg);">
+<article class="pricing py-5" id="banner" data-blink-id="pvb1pxmp5cau7rq4c24yp" style="background-size: cover;background-position: center center;background-repeat: ; height:700px; margin-bottom: 10px: no-repeat;background-image: url(/AQUAGYM.jpg);">
   <div class="container">
     <div class="row">
-    <div class=" col-lg-offset-4 col-lg-4 " id="content_page_show">
+    <div class=" col-lg-offset-4 col-lg-4 col-sm-6 col-sm-offset-3 col-xs-12" id="content_page_show">
       <h3>Voici la formule que vous avec choisit</h3>
       <div class="card mb-5 mb-lg-0">
         <div class="card-body">
@@ -14,7 +14,7 @@
             <li><span class="fa-li"><i class="fas fa-check"></i></span>Occasionnel </li>
              <li><span class="fa-li"><i class="fas fa-check"></i></span>45 minutes</li>
            </ul>
-          <a href="#" class="btn btn-block btn-primary text-uppercase">Réserver</a>
+           <%= link_to 'Faire une réservation', new_reservation_path(aquabike_id: @aquabike.id), class: "btn btn-primary navbar-btn", id: "btn_car_show"%>
         </div>
        </div>
     </div>

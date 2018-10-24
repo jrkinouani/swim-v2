@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   resources :aquabikes , only: [:index, :show]
-  resources :reservation_aquabike, only: [:index, :show, :new, :create]
+  resources :reservations, only: [:index, :show, :new, :create]
 
   get 'pages/aquabike' , to: "pages#aquabike"
   get 'pages/aquaboxing' , to: "pages#aquaboxing"
