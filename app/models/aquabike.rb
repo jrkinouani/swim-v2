@@ -1,3 +1,3 @@
 class Aquabike < ActiveRecord::Base
-  has_many :reservations, dependent: :destroy
+  has_many :reservation_aquabike, dependent: :destroy
 end
