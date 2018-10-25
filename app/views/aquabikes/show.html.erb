@@ -9,10 +9,10 @@
            <h6 class="card-price text-center"><%= @aquabike.price%> <span class="period">/La séance</span></h6>
           <hr>
           <ul class="fa-ul">
-            <li><span class="fa-li"><i class="fas fa-check"></i></span>1 Personne</li>
-            <li><span class="fa-li"><i class="fas fa-check"></i></span>1 cours </li>
-            <li><span class="fa-li"><i class="fas fa-check"></i></span>Occasionnel </li>
-             <li><span class="fa-li"><i class="fas fa-check"></i></span>45 minutes</li>
+            <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @aquabike.nbpers %> Personne(s)</li>
+            <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @aquabike.nbseances %> cours </li>
+            <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @aquabike.periode %>  </li>
+             <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @aquabike.duree %> minutes</li>
            </ul>
            <%= link_to 'Faire une réservation', new_reservation_path(aquabike_id: @aquabike.id), class: "btn btn-primary navbar-btn", id: "btn_car_show"%>
         </div>
