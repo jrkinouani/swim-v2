@@ -1,0 +1,2 @@
+class AquagymsController < ApplicationController
+end

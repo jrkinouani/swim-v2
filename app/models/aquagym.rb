@@ -1,0 +1,2 @@
+class Aquagym < ApplicationRecord
+end
