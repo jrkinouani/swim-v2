@@ -29,7 +29,6 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.create!(reservation_params)
      aquabike = @reservation.aquabike
-        aquabike.price = @reservation.price 
      if @reservation.save
        flash[:danger] = 'bravo!'
        redirect_to reservation_path(@reservation)
@@ -47,3 +46,6 @@ class ReservationsController < ApplicationController
   end
 
 end
+
+
+     
