@@ -40,25 +40,25 @@
  <section class="pricing py-5">
   <div class="container">
     <div class="row">
-      <!-- Free Tier -->
+      <% @aquabikes.each do | aquabike | %>
       <div class="col-lg-4">
-        <div class="card mb-5 mb-lg-0">
-          <div class="card-body">
-            <% @aquabikes.each do | aquabike | %>
-            <h5 class="card-title text-muted text-uppercase text-center"><%= aquabike.title%></h5>
-             <h6 class="card-price text-center"><%= aquabike.price%> <span class="period">/La séance</span></h6>
-            <hr>
-            <ul class="fa-ul">
-              <li><span class="fa-li"><i class="fas fa-check"></i></span><%= aquabike.nbpers %> Personne(s)</li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span><%= aquabike.nbseances %> cours </li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span><%= aquabike.periode %> </li>
-               <li><span class="fa-li"><i class="fas fa-check"></i></span><%= aquabike.duree %> minutes</li>
-             </ul>
-            <h4><%= button_to "Reservez maintenant", aquabike_path(aquabike), :class => "btn btn-block btn-primary text-uppercase", :method => :get %></h4>
+      <div class="card mb-5 mb-lg-0">
+        <div class="card-body">
+          <h5 class="card-title text-muted text-uppercase text-center"><%= aquabike.title%></h5>
+           <h6 class="card-price text-center"><%= aquabike.price%> € <span class="period">/La séance</span></h6>
+          <hr>
+          <ul class="fa-ul">
+            <li><span class="fa-li"><i class="fas fa-check"></i></span><%= aquabike.nbpers %> Personne(s)</li>
+            <li><span class="fa-li"><i class="fas fa-check"></i></span><%= aquabike.nbseances %> cours </li>
+            <li><span class="fa-li"><i class="fas fa-check"></i></span><%= aquabike.periode %> </li>
+             <li><span class="fa-li"><i class="fas fa-check"></i></span><%= aquabike.duree %> minutes</li>
+           </ul>
+          <h4><%= button_to "Reservez maintenant", aquabike_path(aquabike), :class => "btn btn-block btn-primary text-uppercase", :method => :get %></h4>
           </div>
-          <% end %>
         </div>
       </div>
+      <% end %>
+
     </div>
   </div>
 </section>

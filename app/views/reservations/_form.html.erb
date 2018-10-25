@@ -6,16 +6,11 @@
   </div>
   <div class="row" id="content_reservation">
     <div class="col-md-6 col-sm-6 col-xs-12" >
-      <%= form_for @reservation do | f |%>
+      <%= form_for([@aquabike, @aquabike.reservations.new]) do |f| %>
         <div class="col-md-6 col-sm-6 col-xs-12">
           <%= f.date_field :start,  class: "form-control"  %>
         </div>
-          <div class="col-md-6 col-sm-6 col-xs-12">
-             <%= f.hidden_field :aquabike_id, value: @aquabike.id %>
-         </div>
       </div>
-
-
        <div class="col-md-6 col-sm-6 col-xs-12">
           <%= f.hidden_field :aquabike_id, value: @aquabike.id %>
       </div>
@@ -37,7 +32,6 @@
                     onSelect: function(selected) {
                         var newdate = new Date($("#start").datepicker("getDate"));
                         newdate.setDate(newdate.getDate() + 1);
-                        $('#end_at').datepicker("option","minDate", newdate);
                     }
         });
     })

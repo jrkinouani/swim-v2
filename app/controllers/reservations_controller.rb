@@ -29,12 +29,16 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.create!(reservation_params)
      aquabike = @reservation.aquabike
-     if @reservation.save
-       flash[:danger] = 'bravo!'
-       redirect_to reservation_path(@reservation)
-     else
-        flash[:danger] = 'Vous avez mal renseigné les champs de textes !'
+     if aquabike
+       price = aquabike.price
+       if price
+        @reservation.price = aquabike.price
+      else
+          flash[:danger] = 'Vous avez mal renseigné les champs de textes !'
+      end
+      @reservation.save
      end
+     redirect_to reservation_path(@reservation)
   end
 
   def reservation_params
@@ -46,6 +50,3 @@ class ReservationsController < ApplicationController
   end
 
 end
-
-
-     
