@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'charges/new'
+
+  get 'charges/create'
+
   devise_for :admins, path_names: {
     sign_in: 'login',
     sign_out: 'logout',
@@ -9,6 +13,7 @@ Rails.application.routes.draw do
   resources :aquabikes , only: [:index, :show]
   resources :aquagyms , only: [:index, :show]
   resources :reservations, only: [:index, :show, :new, :create]
+  resources :charges
 
   get 'pages/aquabike' , to: "pages#aquabike"
   get 'pages/aquaboxing' , to: "pages#aquaboxing"
