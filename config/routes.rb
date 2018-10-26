@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'reservationgyms/_form'
+
+  get 'reservationgyms/edit'
+
+  get 'reservationgyms/show'
+
+  get 'reservationgyms/index'
+
   get 'charges/new'
 
   get 'charges/create'
@@ -13,6 +21,8 @@ Rails.application.routes.draw do
   resources :aquabikes , only: [:index, :show]
   resources :aquagyms , only: [:index, :show]
   resources :reservations, only: [:index, :show, :new, :create]
+  resources :reservationgyms, only: [:index, :show, :new, :create]
+
   resources :charges
 
   get 'pages/aquabike' , to: "pages#aquabike"

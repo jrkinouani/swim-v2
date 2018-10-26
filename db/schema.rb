@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181025081337) do
+ActiveRecord::Schema.define(version: 20181026115147) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -46,6 +46,15 @@ ActiveRecord::Schema.define(version: 20181025081337) do
     t.string "participant"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reservationgyms", force: :cascade do |t|
+    t.date "start"
+    t.integer "price"
+    t.integer "aquagym_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["aquagym_id"], name: "index_reservationgyms_on_aquagym_id"
   end
 
   create_table "reservations", force: :cascade do |t|
