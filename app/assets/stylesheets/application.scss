@@ -10,6 +10,8 @@
 .navbar-right {
     float: right !important;
     margin-right: 15px;
+    font-size: 18px;
+    margin-top: 20px;
 }
 @media (max-width: 1200px)
 {
@@ -604,16 +606,35 @@ main.resa
     margin-top: 200px;
     margin-bottom:180px;
 }
+#banner_charges
+{
+position: relative;
+    /* text-align: center; */
+    background-size: cover;
+    /* width: 100%; */
+    min-height: 85vh;
+    /* display: inline-flex; */
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    /* padding: 50px; */
+    z-index: 199;
+}
 .example.example1 {
   background-color: #6772e5;
-  padding-top:50px;
+  padding-top:30px;
   padding-bottom: 50px;
 
 }
-
+h3.titlte_pay
+{
+    margin-bottom: 30px;
+    font-size: 23px;
+    color: #FFF;
+}
 .example.example1 * {
   font-family: Roboto, Open Sans, Segoe UI, sans-serif;
-  font-size: 16px;
+
   font-weight: 500;
 }
 
