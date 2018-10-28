@@ -1,14 +1,10 @@
 Rails.application.routes.draw do
+
   get 'reservationgyms/_form'
-
   get 'reservationgyms/edit'
-
   get 'reservationgyms/show'
-
   get 'reservationgyms/index'
-
   get 'charges/new'
-
   get 'charges/create'
 
   devise_for :admins, path_names: {
@@ -36,6 +32,7 @@ Rails.application.routes.draw do
   get 'pages/mention' , to: "pages#mention"
   get 'jardin-aquatique' , to: "pages#jardin"
   get 'pages/staticswims' , to: "pages#staticswims"
+  get 'pages/apropos', to: "pages#apropos"
 
   root :to => "pages#home"
 

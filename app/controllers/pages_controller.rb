@@ -8,6 +8,9 @@ class PagesController < ApplicationController
   def aquaboxing
   end
 
+  def apropos
+
+  end
   def aquaparcours
   end
 
