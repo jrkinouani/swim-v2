@@ -20,6 +20,23 @@
     <%= render 'layouts/footer'%>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script>
+      $(document).ready(function() {
 
+  $(".dropdown").hover(
+          function() {
+              $('.dropdown-menu', this).stop( true, true ).fadeIn("fast");
+              $(this).toggleClass('open');
+              $('b', this).toggleClass("caret caret-up");
+          },
+          function() {
+              $('.dropdown-menu', this).stop( true, true ).fadeOut("fast");
+              $(this).toggleClass('open');
+              $('b', this).toggleClass("caret caret-up");
+          });
+
+
+});
+    </script>
   </body>
 </html>

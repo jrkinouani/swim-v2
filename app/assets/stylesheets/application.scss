@@ -7,6 +7,12 @@
     padding-left: 0px;
     padding-right: 0px;
 }
+.navbar-left {
+    float: left !important;
+    margin-right: 15px;
+    font-size: 18px;
+    margin-top: 20px;
+}
 .navbar-right {
     float: right !important;
     margin-right: 15px;
@@ -24,10 +30,10 @@
     {
         float: none;
     }
-    .navbar-left,.navbar-right
+    /*.navbar-left,.navbar-right
     {
         float: none !important;
-    }
+    }*/
     .navbar-toggle
     {
         display: block;
@@ -153,6 +159,11 @@ img#logo.navbar-brand
  .navbar-default .navbar-brand {
    display: inline;
  }
+ li.link_toggle
+
+ {
+   background-color: red;
+ }
  .navbar-default .navbar-toggle .icon-bar {
    background-color: #fff;
  }
@@ -167,7 +178,7 @@ img#logo.navbar-brand
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    background-color: #ccc;
+    background-color: red;
   }
 
   .navbar-nav .open .dropdown-menu {
