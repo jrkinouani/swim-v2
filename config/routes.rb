@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'reservationgyms/index'
   get 'charges/new'
   get 'charges/create'
+  
 
   devise_for :admins, path_names: {
     sign_in: 'login',

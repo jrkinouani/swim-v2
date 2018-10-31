@@ -15,7 +15,8 @@ gem 'jquery-ui-rails'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'devise'
 gem 'rails_admin', '~> 1.3'
-gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'stripe'
+
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 
 

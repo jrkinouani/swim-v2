@@ -1,15 +1,60 @@
   <section id="banner_charges" data-blink-id="pvb1pxmp5cau7rq4c24yp" style="background-size: cover;background-position: center center;background-repeat: no-repeat;background-image: url(/AQUaGYM.jpg);" >
 
+    <div class="container-fluid show">
+     <div class="">
+      <div class="row">
+        <div class=" col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_paiement">
+        <%= form_tag charges_path do | f | %>
+          <div class="row">
+            <% if flash[:error].present? %>
+              <div id="error_explanation">
+                <p><%= flash[:error] %></p>
+              </div>
+            <% end %>
+              <h3 class="text_systeme">La fenêtre de paiement
+                sécurisée, s'ouvre en cliquant sur le bouton ci-dessous, <br/>
+                pour regler le montant de
+              <% if @reservation %>
+              <span><%= @reservation.price.to_f %></span> €</h3>
+              <%= hidden_field_tag :reservation_id,  @reservation.id %>
+          </div>
+             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-label="Payez avec votre carte bleue"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="DOMTOM IMMO"
+                  data-amount="<%= @reservation.price.to_f*100 %>"
+                  data-currency ="eur"
+                  data-locale="auto">
+              </script>
+            <% else %>
+            <span><%= @transport.price %></span> €</h3>
+            <%= hidden_field_tag :transport_id,  @transport.id %>
+        </div>
+           <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-label="Payez avec votre carte bleue"
+                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-description="DOMTOM IMMO"
+                data-amount="<%= @transport.price*100 %>"
+                data-currency ="eur"
+                data-locale="auto">
+            </script>
+         <% end %>
+        <% end %>
+       </div>
+     </div>
+    </div>
 
-<div class="container">
+
+<!--<div class="container">
   <div class="row" >
     <div class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12" id="stripe">
-      <!--Example 1-->
+
             <div class="cell example example1">
               <div class="text-center">
                 <h3 class="titlte_pay">Payez en toute sécurité</h3>
               </div>
-              <form>
+            <form action="/charge" method="post" id="payment-form">
+
                 <fieldset>
                   <div class="row">
                     <label for="example1-name" data-tid="elements_examples.form.name_label">Nom</label>
@@ -68,5 +113,3 @@
   </div>
 </div>
 </section>
-
-<script src="https://js.stripe.com/v3/"></script>

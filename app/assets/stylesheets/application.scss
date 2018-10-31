@@ -822,6 +822,18 @@ h3.titlte_pay
 .example.example1 .success .reset path {
   fill: #fff;
 }
+
+#zone_paiement
+
+{
+    background-color: #fff;
+    margin-top: 160px;
+}
+.stripe-button-el
+
+{
+    color: red;
+}
 /* page about */
 /* Global */
 #backkgroud_carousel.container-fluid
@@ -918,3 +930,25 @@ li { list-style-type:none;}
 
 ::selection { background: #ff5e99; color: #FFFFFF; text-shadow: 0; }
 ::-moz-selection { background: #ff5e99; color: #FFFFFF; }
+
+
+#zone_paiement
+{
+    margin-top: 150px;
+    margin-bottom: 250px;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 2px solid black;
+}
+h3.text_systeme
+{
+    margin-bottom:50px;
+    font-weight: 400;
+}
+span
+{
+    height: 90px;
+}
