@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181031140906) do
+ActiveRecord::Schema.define(version: 20181101102722) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(version: 20181031140906) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "adultes", force: :cascade do |t|
+    t.string "title"
+    t.integer "price"
+    t.integer "nbpers"
+    t.integer "nbseance"
+    t.string "periode"
+    t.string "duree"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "aquabikes", force: :cascade do |t|
@@ -67,6 +78,17 @@ ActiveRecord::Schema.define(version: 20181031140906) do
     t.string "phone"
     t.string "creneau"
     t.index ["aquabike_id"], name: "index_reservations_on_aquabike_id"
+  end
+
+  create_table "staticswims", force: :cascade do |t|
+    t.string "title"
+    t.integer "price"
+    t.integer "nbpers"
+    t.integer "nbseance"
+    t.string "periode"
+    t.string "duree"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

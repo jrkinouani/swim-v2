@@ -1,0 +1,2 @@
+class Adulte < ApplicationRecord
+end
