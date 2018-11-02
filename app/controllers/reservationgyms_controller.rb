@@ -42,7 +42,7 @@ class ReservationgymsController < ApplicationController
   end
 
   def reservationgym_params
-    params.require(:reservationgym).permit(:start, :price, :aquagym_id )
+    params.require(:reservationgym).permit(:start, :price, :aquagym_id, :name, :phone, :creneau )
   end
 
   def set_reservationgym
