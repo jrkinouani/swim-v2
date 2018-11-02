@@ -17,7 +17,7 @@ class AdultesController < ApplicationController
   end
 
   def index
-    @adulte = Adulte.all
+    @adultes = Adulte.all
   end
   def edit
 

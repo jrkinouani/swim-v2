@@ -17,7 +17,7 @@ class StaticswimsController < ApplicationController
   end
 
   def index
-    @staticswim = Staticswim.all
+    @staticswims = Staticswim.all
   end
   def edit
 
