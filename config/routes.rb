@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  devise_for :admins, path_names: {
+    sign_in: 'login',
+    sign_out: 'logout',
+    sign_up: 'signup',
+  }
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'staticswims/show'
 
   get 'staticswims/index'
@@ -15,13 +21,6 @@ Rails.application.routes.draw do
   get 'charges/new'
   get 'charges/create'
 
-
-  devise_for :admins, path_names: {
-    sign_in: 'login',
-    sign_out: 'logout',
-    sign_up: 'signup',
-  }
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   resources :aquabikes , only: [:index, :show]
   resources :adultes , only: [:index, :show]
