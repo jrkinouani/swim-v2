@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   get 'charges/create'
 
 
+
+
   resources :aquabikes , only: [:index, :show]
   resources :adultes , only: [:index, :show]
   resources :staticswims , only: [:index, :show]
