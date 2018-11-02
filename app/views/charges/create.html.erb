@@ -6,11 +6,14 @@
 <h2>Thanks, you paid <strong><</strong>!</h2>
 <div class="container">
  <div class="row">
+   <% if @reservation %>
   <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_merci">
   <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservation.price %></strong> euros! <br/>
-     v
-     Nous vous recontacterons par email pour convenir d'un rendez-vous
-     pour la remise du véhicule.
+     <% else %>
+     <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_merci">
+     <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservationgym.price %></strong> euros! <br/>
+     <% end %>
+
    </h3>
   </div>
  </div>
