@@ -3,8 +3,10 @@ class ChargesController < ApplicationController
   def new
     if params[:reservation_id]
       @reservation = Reservation.find(params[:reservation_id])
-    else
+    elsif params[:reservationgym_id]
       @reservationgym = Reservationgym.find(params[:reservationgym_id])
+    else
+      @reservationad = Reservationad.find(params[:reservationad_id])
     end
   end
 
@@ -12,9 +14,12 @@ class ChargesController < ApplicationController
     if params[:reservation_id]
      @reservation = Reservation.find(params["reservation_id"])
      @amount = @reservation.price.to_i * 100
-    else
+     elsif params[:reservationgym_id]
      @reservationgym = Reservationgym.find(params["reservationgym_id"])
-     @amount = @reservationgym.price.to_i * 100
+      @amount = @reservationgym.price.to_i * 100
+    else
+     @reservationad = Reservationad.find(params["reservationad_id"])
+     @amount = @reservationad.price.to_i * 100
     end
          customer = Stripe::Customer.create(
        :email => params[:stripeEmail],

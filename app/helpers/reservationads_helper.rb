@@ -1,0 +1,2 @@
+module ReservationadsHelper
+end

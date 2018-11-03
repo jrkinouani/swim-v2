@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start: 2018-11-03
+  phone: MyString
+  name: MyString
+  creneau: MyString
+  adulte: one
+
+two:
+  start: 2018-11-03
+  phone: MyString
+  name: MyString
+  creneau: MyString
+  adulte: two

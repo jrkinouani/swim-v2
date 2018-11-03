@@ -26,15 +26,27 @@
                   data-currency ="eur"
                   data-locale="auto">
               </script>
+              <% elsif @reservationgym %>
+              <h3><span><%= @reservationgym.price %></span> €</h3>
+              <%= hidden_field_tag :reservationgym_id,  @reservationgym.id %>
+          </div>
+             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-label="Payez avec votre carte bleue"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="Swimnatation"
+                  data-amount="<%= @reservationgym.price*100 %>"
+                  data-currency ="eur"
+                  data-locale="auto">
+              </script>
             <% else %>
-            <h3><span><%= @reservationgym.price %></span> €</h3>
-            <%= hidden_field_tag :reservationgym_id,  @reservationgym.id %>
+            <h3><span><%= @reservationad.price %></span> €</h3>
+            <%= hidden_field_tag :reservationad_id,  @reservationad.id %>
         </div>
            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                 data-label="Payez avec votre carte bleue"
                 data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                 data-description="Swimnatation"
-                data-amount="<%= @reservationgym.price*100 %>"
+                data-amount="<%= @reservationad.price*100 %>"
                 data-currency ="eur"
                 data-locale="auto">
             </script>
