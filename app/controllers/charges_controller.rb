@@ -5,6 +5,8 @@ class ChargesController < ApplicationController
       @reservation = Reservation.find(params[:reservation_id])
     elsif params[:reservationgym_id]
       @reservationgym = Reservationgym.find(params[:reservationgym_id])
+    elsif params[:reservationpalme_id]
+      @reservationpalme = Reservationpalme.find(params[:reservationpalme_id])
     else
       @reservationad = Reservationad.find(params[:reservationad_id])
     end
@@ -17,7 +19,10 @@ class ChargesController < ApplicationController
      elsif params[:reservationgym_id]
      @reservationgym = Reservationgym.find(params["reservationgym_id"])
       @amount = @reservationgym.price.to_i * 100
-    else
+      elsif params[:reservationpalme_id]
+      @reservationpalme = Reservationpalme.find(params["reservationpalme_id"])
+     @amount = @reservationpalme.price.to_i * 100
+     else
      @reservationad = Reservationad.find(params["reservationad_id"])
      @amount = @reservationad.price.to_i * 100
     end
