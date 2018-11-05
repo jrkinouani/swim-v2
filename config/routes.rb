@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :admin, path_names: {
     sign_in: 'login',
     sign_out: 'logout',
@@ -17,6 +18,11 @@ Rails.application.routes.draw do
   get 'charges/new'
   get 'charges/create'
 
+  get 'reservationpalmes/_form'
+  get 'rreservationpalmes/index'
+  get 'reservationpalmes/show'
+  get 'reservationpalmes/new'
+
   get 'reservationads/_form'
   get 'reservationads/edit'
   get 'reservationads/show'
@@ -24,12 +30,15 @@ Rails.application.routes.draw do
 
 
   resources :aquabikes , only: [:index, :show]
+  resources :palmes , only: [:index, :show]
   resources :adultes , only: [:index, :show]
   resources :staticswims , only: [:index, :show]
   resources :aquagyms , only: [:index, :show]
   resources :reservations, only: [:index, :show, :new, :create]
   resources :reservationgyms, only: [:index, :show, :new, :create]
   resources :reservationads, only: [:index, :show, :new, :create]
+  resources :reservationpalmes, only: [:index, :show, :new, :create]
+
 
   resources :charges
 
