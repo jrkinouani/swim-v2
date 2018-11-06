@@ -14,6 +14,8 @@
             <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @staticswim.periode %>  </li>
              <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @staticswim.duree %> minutes</li>
            </ul>
+           <%= link_to 'Faire une réservation', new_reservationstatic_path(staticswim_id: @staticswim.id), class: "btn btn-primary navbar-btn", id: "btn_car_show"%>
+
         </div>
        </div>
     </div>

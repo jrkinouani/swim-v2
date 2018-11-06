@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start: 2018-11-06
+  phone: MyString
+  price: 1
+  name: MyString
+  creneau: MyString
+  staticswim: one
+
+two:
+  start: 2018-11-06
+  phone: MyString
+  price: 1
+  name: MyString
+  creneau: MyString
+  staticswim: two

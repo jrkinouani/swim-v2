@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   get 'adultes/show'
   get 'adultes/index'
 
+  get 'reservationstatics/_form'
+  get 'reservationstatics/new'
+  get 'reservationstatics/show'
+  get 'reservationstatics/index'
+
   get 'reservationgyms/_form'
   get 'reservationgyms/edit'
   get 'reservationgyms/show'
@@ -28,7 +33,6 @@ Rails.application.routes.draw do
   get 'reservationads/show'
   get 'reservationads/index'
 
-
   resources :aquabikes , only: [:index, :show]
   resources :palmes , only: [:index, :show]
   resources :adultes , only: [:index, :show]
@@ -38,7 +42,7 @@ Rails.application.routes.draw do
   resources :reservationgyms, only: [:index, :show, :new, :create]
   resources :reservationads, only: [:index, :show, :new, :create]
   resources :reservationpalmes, only: [:index, :show, :new, :create]
-
+  resources :reservationstatics, only: [:index, :show, :new, :create]
 
   resources :charges
 
