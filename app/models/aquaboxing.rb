@@ -1,0 +1,2 @@
+class Aquaboxing < ApplicationRecord
+end
