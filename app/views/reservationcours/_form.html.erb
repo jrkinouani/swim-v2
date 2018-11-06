@@ -5,10 +5,8 @@
     <div class="text-center">
       <h3 class="title_résa-index">Pour faire une réservation choisissez une date et un créneau</h3>
     </div>
-
-
-      <%= form_for ([@palme, @palme.reservationpalmes.new])do |f | %>
-        <div class="col-md-6 ">
+      <%= form_for ([@aquaparcour, @aquaparcour.reservationcours.new])do |f | %>
+      <div class="col-md-6 ">
           <label for="">choisissez une date</label>
           <%= f.date_field :start,  class: "form-control"%>
       </div>
@@ -17,21 +15,20 @@
         <%= f.text_field :name, placeholder: 'ex :Dimiti payet',  class: "form-control"  %>
       </div>
       <div class="col-md-6">
-        <label for="">Entrez votre numero de téléphone</label>
+      <label for="">Entrez votre numero de téléphone</label>
         <%= f.text_field :phone, placeholder: 'ex 0692 12 33 44',  class: "form-control"  %>
       </div>
       <div class="col-md-6">
         <label for="">Sélectionnez un créneau</label>
-
       <%= f.select :creneau, ["selectionnez un créneau", "Lundi: 12h - 13h", "Religion", "Restaurant"] ,{},{ :class => "form-control"}%>
       </div>
        <div class="col-md-6 col-sm-6 col-xs-12">
-          <%= f.hidden_field :palme_id, value: @palme.id %>
+          <%= f.hidden_field :aquaparcour_id, value: @aquaparcour.id %>
       </div>
-            <div class="text-center">
-              <%= f.submit 'Validez votre location', :class => "btn btn-primary navbar-btn"%>
-            </div>
-      <% end %>
+      <div class="text-center">
+        <%= f.submit 'Validez votre location', :class => "btn btn-primary navbar-btn"%>
+      </div>
+     <% end %>
     </div>
   </div>
 </div>

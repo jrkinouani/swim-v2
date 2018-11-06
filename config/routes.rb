@@ -16,6 +16,11 @@ Rails.application.routes.draw do
   get 'reservationstatics/show'
   get 'reservationstatics/index'
 
+  get 'reservationcours/_form'
+  get 'reservationcours/new'
+  get 'reservationcours/show'
+  get 'reservationcours/index'
+
   get 'reservationgyms/_form'
   get 'reservationgyms/edit'
   get 'reservationgyms/show'
@@ -44,6 +49,7 @@ Rails.application.routes.draw do
   resources :reservationads, only: [:index, :show, :new, :create]
   resources :reservationpalmes, only: [:index, :show, :new, :create]
   resources :reservationstatics, only: [:index, :show, :new, :create]
+  resources :reservationcours, only: [:index, :show, :new, :create]
 
   resources :charges
 

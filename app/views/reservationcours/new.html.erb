@@ -6,8 +6,7 @@
       <h3 class="title_résa-index">Pour faire une réservation choisissez une date et un créneau</h3>
     </div>
 
-
-      <%= form_for ([@palme, @palme.reservationpalmes.new])do |f | %>
+    <%= form_for @reservationcour   do | f |%>
         <div class="col-md-6 ">
           <label for="">choisissez une date</label>
           <%= f.date_field :start,  class: "form-control"%>
@@ -25,8 +24,9 @@
 
       <%= f.select :creneau, ["selectionnez un créneau", "Lundi: 12h - 13h", "Religion", "Restaurant"] ,{},{ :class => "form-control"}%>
       </div>
-       <div class="col-md-6 col-sm-6 col-xs-12">
-          <%= f.hidden_field :palme_id, value: @palme.id %>
+       <div class="col-md-6 col-sm-6 col-xs-12">  
+          <%= f.hidden_field :aquaparcour_id, value: @aquaparcour.id %>
+
       </div>
             <div class="text-center">
               <%= f.submit 'Validez votre location', :class => "btn btn-primary navbar-btn"%>

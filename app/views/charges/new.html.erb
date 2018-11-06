@@ -1,5 +1,4 @@
   <section id="banner_charges" data-blink-id="pvb1pxmp5cau7rq4c24yp" style="background-size: cover;background-position: center center;background-repeat: no-repeat;background-image: url(/AQUaGYM.jpg);" >
-
     <div class="container-fluid show">
      <div class="">
       <div class="row">
@@ -17,7 +16,7 @@
               <% if @reservation %>
               <h3><span><%= @reservation.price.to_f %></span> €</h3>
               <%= hidden_field_tag :reservation_id,  @reservation.id %>
-          </div>
+
              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                   data-label="Payez avec votre carte bleue"
                   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
@@ -29,7 +28,7 @@
               <% elsif @reservationgym %>
               <h3><span><%= @reservationgym.price %></span> €</h3>
               <%= hidden_field_tag :reservationgym_id,  @reservationgym.id %>
-          </div>
+
              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                   data-label="Payez avec votre carte bleue"
                   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
@@ -41,7 +40,7 @@
               <% elsif @reservationpalme %>
               <h3><span><%= @reservationpalme.price %></span> €</h3>
               <%= hidden_field_tag :reservationpalme_id,  @reservationpalme.id %>
-          </div>
+
              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                   data-label="Payez avec votre carte bleue"
                   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
@@ -53,12 +52,24 @@
               <% elsif @reservationstatic %>
               <h3><span><%= @reservationstatic.price %></span> €</h3>
               <%= hidden_field_tag :reservationstatic_id,  @reservationstatic.id %>
-          </div>
+
              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                   data-label="Payez avec votre carte bleue"
                   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                   data-description="Swimnatation"
                   data-amount="<%= @reservationstatic.price*100 %>"
+                  data-currency ="eur"
+                  data-locale="auto">
+              </script>
+              <% elsif @reservationcour %>
+              <h3><span><%= @reservationcour.price %></span> €</h3>
+              <%= hidden_field_tag :reservationcour_id,  @reservationcour.id %>
+          
+             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-label="Payez avec votre carte bleue"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="Swimnatation"
+                  data-amount="<%= @reservationcour.price*100 %>"
                   data-currency ="eur"
                   data-locale="auto">
               </script>
