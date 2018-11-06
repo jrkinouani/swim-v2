@@ -1,0 +1,2 @@
+class Aquaparcour < ApplicationRecord
+end

@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   get 'reservationads/index'
 
   resources :aquabikes , only: [:index, :show]
+  resources :aquaparcours , only: [:index, :show]
   resources :palmes , only: [:index, :show]
   resources :adultes , only: [:index, :show]
   resources :staticswims , only: [:index, :show]
