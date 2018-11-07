@@ -52,6 +52,7 @@ Rails.application.routes.draw do
   resources :reservationstatics, only: [:index, :show, :new, :create]
   resources :reservationcours, only: [:index, :show, :new, :create]
 
+
   resources :charges
 
   get 'pages/aquabike' , to: "pages#aquabike"
