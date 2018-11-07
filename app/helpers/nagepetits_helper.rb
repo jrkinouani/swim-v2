@@ -1,0 +1,2 @@
+module NagepetitsHelper
+end

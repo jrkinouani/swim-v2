@@ -1,0 +1,2 @@
+class Nagepetit < ApplicationRecord
+end

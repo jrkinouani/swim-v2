@@ -1,0 +1,2 @@
+class NagepetitsController < ApplicationController
+end
