@@ -1,0 +1,65 @@
+<section id="banner" data-blink-id="pvb1pxmp5cau7rq4c24yp" style="background-size: cover;background-position: center center;background-repeat: no-repeat;background-image: url(/imagejbjs.jpg);" >
+ <div class="banner-text">
+  <h2 class="description-header">Ecole de natation pour les - de 6 ans</h2>
+ </div>
+ <div class="dimmer"></div>
+</section>
+
+     <div class="container marketing">
+      <div class="row">
+        <div class="text-center">
+          <h2 class="why">Ecole de natation pour les petits</h2>
+        </div>
+        <div class="col-lg-4">
+          <div class="text-center"><i class="fas fa-swimming-pool"></i></div>
+           <p class="text">L’aquabike est le sport idéal si vous avez les articulations
+             fragiles et plus particulièrement les genoux et si vous êtes en surpoids.
+             Lorsque vous êtes dans l’eau, votre corps est en quasi-apesanteur
+            et vous ne ressentez qu’un tiers de votre poids terrestre.
+             Les risques de blessures et de chutes sont donc nuls.</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <div class="text-center"><i class="fas fa-smile-beam"></i></i></div>
+          <p class="text">La monotonie n’est pas à l’ordre du jour. Vous pédalez
+            dans différentes positions, accompagné d’un professeur et
+             au rythme d’une musique. Les séances de 45 minutes à une
+             heure vous permettent de vous muscler sans vous ennuyer.
+          </p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <div class="text-center"><i class="fab fa-gratipay"></i></div>
+          <p class="text">Les bienfaits de l’aquabike :
+            Amélioration du système cardio-vasculaire,
+            lutte contre la cellulite, raffermi la peau et
+            muscle le bas du corps.
+          </p>
+        </div><!-- /.col-lg-4 -->
+        <hr>
+      </div><!-- /.row -->
+</div>
+ <section class="pricing py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Free Tier -->
+      <div class="col-md-offset-4 col-md-4">
+        <div class="card mb-5 mb-lg-0">
+          <div class="card-body">
+            <% @nagepetits.each do | nagepetit | %>
+            <h5 class="card-title text-muted text-uppercase text-center"><%= nagepetit.title%></h5>
+             <h6 class="card-price text-center"><%=  nagepetit.price%> €<span class="period">/La séance</span></h6>
+            <hr>
+            <ul class="fa-ul">
+              <li><span class="fa-li"><i class="fas fa-check"></i></span><%=  nagepetit.nbpers %> Personne (s) maxi</li>
+              <li><span class="fa-li"><i class="fas fa-check"></i></span><%=  nagepetit.nbseance %> cours </li>
+              <li><span class="fa-li"><i class="fas fa-check"></i></span><%=  nagepetit.periode %> </li>
+               <li><span class="fa-li"><i class="fas fa-check"></i></span><%=  nagepetit.duree %> minutes</li>
+
+             </ul>
+            <h4><%= button_to "Reservez maintenant",  nagepetit_path( nagepetit), :class => "btn btn-block btn-primary text-uppercase", :method => :get %></h4>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

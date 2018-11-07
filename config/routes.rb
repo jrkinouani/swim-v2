@@ -45,6 +45,7 @@ Rails.application.routes.draw do
 
 
   resources :aquaboxings , only: [:index, :show]
+  resources :nagepetits , only: [:index, :show]
   resources :aquabikes , only: [:index, :show]
   resources :aquaparcours , only: [:index, :show]
   resources :palmes , only: [:index, :show]
