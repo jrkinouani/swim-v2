@@ -64,12 +64,24 @@
               <% elsif @reservationcour %>
               <h3><span><%= @reservationcour.price %></span> €</h3>
               <%= hidden_field_tag :reservationcour_id,  @reservationcour.id %>
-          
+
              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                   data-label="Payez avec votre carte bleue"
                   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                   data-description="Swimnatation"
                   data-amount="<%= @reservationcour.price*100 %>"
+                  data-currency ="eur"
+                  data-locale="auto">
+              </script>
+              <% elsif @reservationboxing %>
+              <h3><span><%= @reservationboxing.price %></span> €</h3>
+              <%= hidden_field_tag :reservationboxing_id,  @reservationboxing.id %>
+
+             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-label="Payez avec votre carte bleue"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="Swimnatation"
+                  data-amount="<%= @reservationboxing.price*100 %>"
                   data-currency ="eur"
                   data-locale="auto">
               </script>

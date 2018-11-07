@@ -14,7 +14,7 @@
             <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @aquaboxing.periode %>  </li>
              <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @aquaboxing.duree %> minutes</li>
            </ul>
-           <%= link_to 'Faire une réservation', new_reservationbox_path(aquaboxing_id: @aquaboxing.id), class: "btn btn-primary navbar-btn", id: "btn_car_show"%>
+           <%= link_to 'Faire une réservation', new_reservationboxing_path(aquaboxing_id: @aquaboxing.id), class: "btn btn-primary navbar-btn", id: "btn_car_show"%>
 
         </div>
        </div>

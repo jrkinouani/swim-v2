@@ -1,3 +1,3 @@
 class Aquaboxing < ApplicationRecord
-  has_many :reservationboxes, dependent: :destroy
+  has_many :reservationboxings, dependent: :destroy
 end

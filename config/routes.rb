@@ -38,6 +38,12 @@ Rails.application.routes.draw do
   get 'reservationads/show'
   get 'reservationads/index'
 
+  get 'reservationboxings/_form'
+  get 'reservationboxings/index'
+  get 'reservationboxings/show'
+  get 'reservationboxings/new'
+
+
   resources :aquaboxings , only: [:index, :show]
   resources :aquabikes , only: [:index, :show]
   resources :aquaparcours , only: [:index, :show]
@@ -51,6 +57,7 @@ Rails.application.routes.draw do
   resources :reservationpalmes, only: [:index, :show, :new, :create]
   resources :reservationstatics, only: [:index, :show, :new, :create]
   resources :reservationcours, only: [:index, :show, :new, :create]
+  resources :reservationboxings, only: [:index, :show, :new, :create]
 
 
   resources :charges
