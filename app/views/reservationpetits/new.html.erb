@@ -1,0 +1,55 @@
+<main class="resa">
+  <div class="container">
+  <div class="row" id="content_page_index">
+    <div class=" col-lg-offset-3 col-lg-6 col-sm-6 col-sm-offset-3 col-xs-12" id="content_page_show">
+    <div class="text-center">
+      <h3 class="title_résa-index">Pour faire une réservation choisissez une date et un créneau</h3>
+    </div>
+
+    <%= form_for @reservationpetit   do | f |%>
+        <div class="col-md-6 ">
+          <label for="">choisissez une date</label>
+          <%= f.date_field :start,  class: "form-control"%>
+      </div>
+      <div class="col-md-6">
+        <label for="">Entrez votre nom complet</label>
+        <%= f.text_field :name, placeholder: 'ex :Dimiti payet',  class: "form-control"  %>
+      </div>
+      <div class="col-md-6">
+        <label for="">Entrez votre numero de téléphone</label>
+        <%= f.text_field :phone, placeholder: 'ex 0692 12 33 44',  class: "form-control"  %>
+      </div>
+      <div class="col-md-6">
+        <label for="">Sélectionnez un créneau</label>
+
+      <%= f.select :creneau, ["selectionnez un créneau", "Lundi: 12h - 13h", "Religion", "Restaurant"] ,{},{ :class => "form-control"}%>
+      </div>
+       <div class="col-md-6 col-sm-6 col-xs-12">
+          <%= f.hidden_field :nagepetit_id, value: @nagepetit.id %>
+
+      </div>
+            <div class="text-center">
+              <%= f.submit 'Validez votre location', :class => "btn btn-primary navbar-btn"%>
+            </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+</main>
+ <script>
+ $(function() {
+        $('#start').datepicker({
+                    dateFormat: 'dd-mm-yy',
+                    monthNames: ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août',
+                    'Septembre','Octobre','Novembre','Décembre'],
+                    dayNamesMin: ['D','L','M','M','J','V','S'],
+                    minDate: 0,
+                    maxDate: '1m',
+                    onSelect: function(selected) {
+                        var newdate = new Date($("#start").datepicker("getDate"));
+                        newdate.setDate(newdate.getDate() + 1);
+                        $('#end_at').datepicker("option","minDate", newdate);
+                    }
+        });
+    })
+</script>

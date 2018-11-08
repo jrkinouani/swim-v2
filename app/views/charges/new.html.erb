@@ -85,6 +85,18 @@
                   data-currency ="eur"
                   data-locale="auto">
               </script>
+              <% elsif @reservationpetit %>
+              <h3><span><%= @reservationpetit.price %></span> €</h3>
+              <%= hidden_field_tag :reservationpetit_id,  @reservationpetit.id %>
+
+             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-label="Payez avec votre carte bleue"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="Swimnatation"
+                  data-amount="<%= @reservationpetit.price*100 %>"
+                  data-currency ="eur"
+                  data-locale="auto">
+              </script>
             <% else %>
 
             <h3><span><%= @reservationad.price %></span> €</h3>
