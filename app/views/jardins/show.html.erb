@@ -9,11 +9,12 @@
            <h6 class="card-price text-center"><%= @jardin.price%> €<span class="period">  <br>+  20 € de frais d'adhésion annuelle</span></h6>
           <hr>
           <ul class="fa-ul">
-            <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @jardint.nbpers %> Personne (s) maxi</li>
+            <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @jardin.nbpers %> Personne (s) maxi</li>
             <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @jardin.nbseance %> cours/ semaine </li>
             <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @jardin.periode %> Occasionnel </li>
              <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @jardin.duree %> minutes</li>
            </ul>
+           <%= link_to 'Faire une réservation', new_reservationjardin_path(jardin_id: @jardin.id), class: "btn btn-primary navbar-btn", id: "btn_car_show"%>
 
         </div>
        </div>

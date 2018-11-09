@@ -2,14 +2,14 @@ class ReservationpalmesController < ApplicationController
   before_action :set_reservationpalme, only: [:show, :destroy, :edit, :update]
 
   def index
-    @reservationpalmes = Reservationad.includes(:palme).all
+    @reservationpalmes = Reservationpalme.includes(:palme).all
   end
 
   def show
   end
 
   def destroy
-    @reservationpalmes.destroy
+    @reservationpalme.destroy
     head :ok
   end
 
@@ -32,7 +32,7 @@ class ReservationpalmesController < ApplicationController
      if palme
        price = palme.price
        if price
-        @reservationpalme.price = palme.price
+        @reservationpalme.price = palme.price + 20
       else
           flash[:danger] = 'Vous avez mal renseigné les champs de textes !'
       end
