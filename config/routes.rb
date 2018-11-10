@@ -78,7 +78,7 @@ Rails.application.routes.draw do
   resources :reservationpetits, only: [:index, :show, :new, :create]
   resources :reservationjards, only: [:index, :show, :new, :create]
   resources :reservationecoles, only: [:index, :show, :new, :create]
-
+  resources :reservationpolos, only: [:index, :show, :new, :create]
 
   get 'pages/mention' , to: "pages#mention"
   get 'pages/apropos', to: "pages#apropos"

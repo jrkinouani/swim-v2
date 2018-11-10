@@ -14,11 +14,13 @@ class ChargesController < ApplicationController
     elsif params[:reservationboxing_id]
       @reservationboxing = Reservationboxing.find(params[:reservationboxing_id])
     elsif params[:reservationecole_id]
-      @reservationecole = Reservationecole.find(params[:reservationecole_id])  
+      @reservationecole = Reservationecole.find(params[:reservationecole_id])
     elsif params[:reservationjard_id]
       @reservationjard = Reservationjard.find(params[:reservationjard_id])
     elsif params[:reservationpetit_id]
       @reservationpetit = Reservationpetit.find(params[:reservationpetit_id])
+    elsif params[:reservationpolo_id]
+      @reservationpolo = Reservationpolo.find(params[:reservationpolo_id])
     else
       @reservationad = Reservationad.find(params[:reservationad_id])
     end
