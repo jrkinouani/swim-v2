@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :admin, path_names: {
     sign_in: 'login',
     sign_out: 'logout',
@@ -9,6 +10,9 @@ Rails.application.routes.draw do
   get 'staticswims/index'
   get 'adultes/show'
   get 'adultes/index'
+
+  get 'ecoles/index'
+  get 'ecoles/show'
 
   get 'reservationstatics/_form'
   get 'reservationstatics/new'
@@ -48,7 +52,7 @@ Rails.application.routes.draw do
   get 'reservationjards/show'
   get 'reservationjards/new'
 
-
+  resources :charges
   resources :aquaboxings , only: [:index, :show]
   resources :jardins , only: [:index, :show]
   resources :nagepetits , only: [:index, :show]
@@ -58,6 +62,7 @@ Rails.application.routes.draw do
   resources :adultes , only: [:index, :show]
   resources :staticswims , only: [:index, :show]
   resources :aquagyms , only: [:index, :show]
+  resources :ecoles , only: [:index, :show]
   resources :reservations, only: [:index, :show, :new, :create]
   resources :reservationgyms, only: [:index, :show, :new, :create]
   resources :reservationads, only: [:index, :show, :new, :create]
@@ -67,10 +72,6 @@ Rails.application.routes.draw do
   resources :reservationboxings, only: [:index, :show, :new, :create]
   resources :reservationpetits, only: [:index, :show, :new, :create]
   resources :reservationjards, only: [:index, :show, :new, :create]
-
-
-  resources :charges
-
 
   get 'pages/mention' , to: "pages#mention"
   get 'pages/apropos', to: "pages#apropos"

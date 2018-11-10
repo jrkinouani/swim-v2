@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: 
+  price: 1
+  nbpers: 1
+  nbseance: 1
+  periode: MyString
+  duree: MyString
+
+two:
+  title: 
+  price: 1
+  nbpers: 1
+  nbseance: 1
+  periode: MyString
+  duree: MyString
