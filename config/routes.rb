@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'polos/index'
+
+  get 'polos/show'
+
   devise_for :admin, path_names: {
     sign_in: 'login',
     sign_out: 'logout',
@@ -63,6 +67,7 @@ Rails.application.routes.draw do
   resources :staticswims , only: [:index, :show]
   resources :aquagyms , only: [:index, :show]
   resources :ecoles , only: [:index, :show]
+  resources :polos , only: [:index, :show]
   resources :reservations, only: [:index, :show, :new, :create]
   resources :reservationgyms, only: [:index, :show, :new, :create]
   resources :reservationads, only: [:index, :show, :new, :create]
