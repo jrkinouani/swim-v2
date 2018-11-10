@@ -14,6 +14,7 @@
             <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @ecole.periode %> Occasionnel </li>
              <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @ecole.duree %> minutes</li>
            </ul>
+           <%= link_to 'Faire une réservation', new_reservationecole_path(ecole_id: @ecole.id), class: "btn btn-primary navbar-btn", id: "btn_car_show"%>
         </div>
        </div>
     </div>

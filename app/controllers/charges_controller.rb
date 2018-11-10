@@ -13,6 +13,8 @@ class ChargesController < ApplicationController
       @reservationcour = Reservationcour.find(params[:reservationcour_id])
     elsif params[:reservationboxing_id]
       @reservationboxing = Reservationboxing.find(params[:reservationboxing_id])
+    elsif params[:reservationecole_id]
+      @reservationecole = Reservationecole.find(params[:reservationecole_id])  
     elsif params[:reservationjard_id]
       @reservationjard = Reservationjard.find(params[:reservationjard_id])
     elsif params[:reservationpetit_id]
@@ -43,7 +45,7 @@ class ChargesController < ApplicationController
       @amount = @reservationboxing.price.to_i * 100
     elsif params[:reservationjard_id]
       @rreservationjard = Reservationjard.find(params["reservationjard_id"])
-      @amount = @reservationjard.price.to_i * 100  
+      @amount = @reservationjard.price.to_i * 100
     elsif params[:reservationpetit_id]
       @reservationpetit = Reservationpetit.find(params["reservationpetit_id"])
       @amount = @reservationpetit.price.to_i * 100

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start: 2018-11-10
+  price: 1
+  name: MyString
+  phone: MyString
+  creneau: MyString
+  ecole: one
+
+two:
+  start: 2018-11-10
+  price: 1
+  name: MyString
+  phone: MyString
+  creneau: MyString
+  ecole: two

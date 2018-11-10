@@ -1,0 +1,15 @@
+<div class="container-fluid show">
+ <div class="fond">
+  <div class="row">
+    <div class="col-md-offset-4 col-md-4" id="zone_show_resa">
+      <div class="text-center">
+        <h3 class="title_show">Récapitulatif de votre réservation pour adulte </h3>
+      </div>
+      <h3><p>Du <%= @reservationecole.start %> </p></h3>
+      <p><h4>Prix total : <span><%= @reservationecole.price %> euros</span></h4> </p> <br/>
+      <h3><%= link_to 'Passez au paiement', new_charge_path(reservationecole_id: @reservationecole.id)%></h3><br/>
+
+  </div>
+ </div>
+ </div>
+</div>
