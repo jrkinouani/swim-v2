@@ -1,3 +1,3 @@
 class Jardin < ApplicationRecord
-  has_many :reservationjardins, dependent: :destroy
+  has_many :reservationjards, dependent: :destroy
 end
