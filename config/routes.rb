@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'nagesynchros/index'
+  get 'nagesynchros/show'
   get 'polos/index'
-
   get 'polos/show'
 
   devise_for :admin, path_names: {
@@ -57,6 +58,7 @@ Rails.application.routes.draw do
   get 'reservationjards/new'
 
   resources :charges
+  resources :nagesynchros , only: [:index, :show]
   resources :aquaboxings , only: [:index, :show]
   resources :jardins , only: [:index, :show]
   resources :nagepetits , only: [:index, :show]

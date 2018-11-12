@@ -1,0 +1,2 @@
+class Nagesynchro < ApplicationRecord
+end
