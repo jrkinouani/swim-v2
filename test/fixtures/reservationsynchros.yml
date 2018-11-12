@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start: 2018-11-12
+  name: MyString
+  creneau: 
+  price: 1
+  phone: MyString
+  nagesynchro: one
+
+two:
+  start: 2018-11-12
+  name: MyString
+  creneau: 
+  price: 1
+  phone: MyString
+  nagesynchro: two

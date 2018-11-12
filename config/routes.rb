@@ -57,6 +57,11 @@ Rails.application.routes.draw do
   get 'reservationjards/show'
   get 'reservationjards/new'
 
+  get 'reservationsynchros/_form'
+  get 'reservationsynchros/index'
+  get 'reservationsynchros/show'
+  get 'reservationsynchros/new'
+
   resources :charges
   resources :nagesynchros , only: [:index, :show]
   resources :aquaboxings , only: [:index, :show]
@@ -81,6 +86,7 @@ Rails.application.routes.draw do
   resources :reservationjards, only: [:index, :show, :new, :create]
   resources :reservationecoles, only: [:index, :show, :new, :create]
   resources :reservationpolos, only: [:index, :show, :new, :create]
+  resources :reservationsynchros, only: [:index, :show, :new, :create]
 
   get 'pages/mention' , to: "pages#mention"
   get 'pages/apropos', to: "pages#apropos"

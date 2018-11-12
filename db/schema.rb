@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181112115309) do
+ActiveRecord::Schema.define(version: 20181112191100) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -278,6 +278,18 @@ ActiveRecord::Schema.define(version: 20181112115309) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["staticswim_id"], name: "index_reservationstatics_on_staticswim_id"
+  end
+
+  create_table "reservationsynchros", force: :cascade do |t|
+    t.date "start"
+    t.string "name"
+    t.string "creneau"
+    t.integer "price"
+    t.string "phone"
+    t.integer "nagesynchro_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["nagesynchro_id"], name: "index_reservationsynchros_on_nagesynchro_id"
   end
 
   create_table "staticswims", force: :cascade do |t|

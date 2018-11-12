@@ -31,6 +31,9 @@
    <% elsif  @reservationpetit %>
     <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_merci">
     <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservationpetit.price %></strong> euros! <br/>
+      <% elsif  @reservationsynchro %>
+       <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_merci">
+       <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservationsynchro.price %></strong> euros! <br/>  
    <% elsif  @reservationpolo %>
       <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_merci">
       <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservationpolo.price %></strong> euros! <br/>
