@@ -75,7 +75,8 @@ class ChargesController < ApplicationController
        :customer    => customer.id,
        :amount      => @amount,
        :description => 'Rails Stripe customer',
-       :currency    => 'eur'
+       :currency    => 'eur',
+       :receipt_email=> @email,
      )
      #@reservation = Reservation.find(params["reservation_id"])
       #Notifier.paiement(@reservation).deliver

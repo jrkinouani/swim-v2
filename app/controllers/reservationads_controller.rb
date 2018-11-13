@@ -32,7 +32,7 @@ class ReservationadsController < ApplicationController
      if adulte
        price = adulte.price
        if price
-        @reservationad.price = adulte.price + 20
+        @reservationad.price = adulte.price 
       else
           flash[:danger] = 'Vous avez mal renseigné les champs de textes !'
       end
