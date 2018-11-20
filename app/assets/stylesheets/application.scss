@@ -1470,6 +1470,11 @@ ul.thumbnails {
     height: 30px;
     width: 15px;
 }
+i.glyphicon.glyphicon-chevron-left, i.glyphicon.glyphicon-chevron-right
+{
+      color: #215594 !important;
+      
+}
 /* Mobile Only */
 @media (max-width: 767px) {
     .page-header, .control-box {
@@ -1509,9 +1514,18 @@ span
 {
     height: 90px;
 }
+
+a.by
+{
+    color: #215594 !important;
+}
 a.by:hover
 {
-    color: #FFF;
+    color: #FFF !important;
+}
+i.fab.fa-facebook-f ,i.fab.fa-instagram
+{
+      color: #215594 !important;
 }
 #map
 {
