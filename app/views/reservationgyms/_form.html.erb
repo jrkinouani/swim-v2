@@ -7,9 +7,23 @@
   <div class="row" id="content_reservation">
     <div class="col-md-6 col-sm-6 col-xs-12" >
       <%= form_for([@aquagym, @aquagym.reservationgyms.new]) do |f| %>
-        <div class="col-md-6 col-sm-6 col-xs-12">
-          <%= f.date_field :start,  class: "form-control"  %>
-        </div>
+      <div class="col-md-6 ">
+        <label for="">choisissez une date</label>
+        <%= f.date_field :start,  class: "form-control"%>
+    </div>
+    <div class="col-md-6">
+      <label for="">Entrez votre nom complet</label>
+      <%= f.text_field :name, placeholder: 'ex :Dimiti payet',  class: "form-control"  %>
+    </div>
+    <div class="col-md-6">
+      <label for="">Entrez votre numero de téléphone</label>
+      <%= f.text_field :phone, placeholder: 'ex 0692 12 33 44',  class: "form-control"  %>
+    </div>
+    <div class="col-md-6">
+      <label for="">Sélectionnez un créneau</label>
+
+    <%= f.select :creneau, ["selectionnez un créneau", "Mardi 19h05 - 20h", "Jeudi 19h05 - 20h", "Samedi 13h - 13h45"] ,{},{ :class => "form-control"}%>
+    </div>
       </div>
        <div class="col-md-6 col-sm-6 col-xs-12">
           <%= f.hidden_field :aquagym_id, value: @aquagym.id %>

@@ -23,7 +23,7 @@
       <div class="col-md-6">
         <label for="">Sélectionnez un créneau</label>
 
-      <%= f.select :creneau, ["selectionnez un créneau", "Lundi: 12h - 13h", "Religion", "Restaurant"] ,{},{ :class => "form-control"}%>
+      <%= f.select :creneau, ["selectionnez un créneau", "Lundi: 12h15 - 13h","Lundi: 17h30 - 18h15", "Mardi: 12h15 - 13h", "Mardi: 18h15 - 19h00","Mercredi: 12h15 - 13h", "Mrecredi: 17h30 - 18h15", "Mercredi:18H15 - 19h", "Jeudi: 12h15 - 13h", "Jeudi: 17h30 - 18h15","Jeudi: 1!h15 - 19h00", "Vendredi: 12h15 - 13h","Samedi: 12h15 - 13h"] ,{},{ :class => "form-control"}%>
       </div>
        <div class="col-md-6 col-sm-6 col-xs-12">
           <%= f.hidden_field :aquabike_id, value: @aquabike.id %>

@@ -22,7 +22,7 @@
       <div class="col-md-6">
         <label for="">Sélectionnez un créneau</label>
 
-      <%= f.select :creneau, ["selectionnez un créneau", "Lundi: 12h - 13h", "Religion", "Restaurant"] ,{},{ :class => "form-control"}%>
+      <%= f.select :creneau, ["selectionnez un créneau", "Lundi: 16h35 - 17h20 (6-8 ans)" , "Mardi 16h35 - 17h20 (Grd débutant 5-7 ans)", "Mardi 17h25 - 18h10 (9-12 ans)","Mercredi 14H - 14h45 (6 -8 ans)", "Mercredi 14h45 -15h30 (9-12 ans)","Vendredi 16h35 - 17h 20 (6-8ans)","Vendredi 17h25 -18h10 (9-12 ans)", "Vendredi 18h15 -19h (Ados 12-17 ans)"] ,{},{ :class => "form-control"}%>
       </div>
        <div class="col-md-6 col-sm-6 col-xs-12">
           <%= f.hidden_field :ecole_id, value: @ecole.id %>

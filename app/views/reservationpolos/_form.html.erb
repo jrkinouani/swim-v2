@@ -22,7 +22,7 @@
       <div class="col-md-6">
         <label for="">Sélectionnez un créneau</label>
 
-      <%= f.select :creneau, ["selectionnez un créneau", "Lundi: 12h - 13h", "Religion", "Restaurant"] ,{},{ :class => "form-control"}%>
+      <%= f.select :creneau, ["selectionnez un créneau", "Pas encore défini"] ,{},{ :class => "form-control"}%>
       </div>
        <div class="col-md-6 col-sm-6 col-xs-12">
           <%= f.hidden_field :polo_id, value: @polo.id %>
