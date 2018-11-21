@@ -1,14 +1,20 @@
+<section id="banner_charges" data-blink-id="pvb1pxmp5cau7rq4c24yp" style="background-size: cover;background-position: center center;background-repeat: no-repeat;background-image: url(/play.jpg);" >
+
 <div class="container-fluid show">
  <div class="fond">
   <div class="row">
     <div class="col-md-offset-4 col-md-4" id="zone_show_resa">
       <div class="text-center">
-        <h3 class="title_show">Récapitulatif de votre réservation pour adulte </h3>
+        <h3 class="title_show">Récapitulatif de votre réservation pour l'aquaboxing </h3>
       </div>
-      <h3><p>Du <%= @reservationboxing.start %> </p></h3>
-      <p><h4>Prix total : <span><%= @reservationboxing.price %> euros</span></h4></p><br/>
+      <h3>Vous avez réservé pour le : <%= @reservationboxing.start %></h3>
+      <h3>Le créneau de : <%= @reservationboxing.creneau %></h3>
+      <h4>Prix total : <span><%= @reservationboxing.price %> euros</span></h4><br/>
+      <div class="text-center">
       <h3><%= link_to 'Passez au paiement', new_charge_path(reservationboxing_id: @reservationboxing.id)%></h3><br/>
+      </div>
   </div>
  </div>
  </div>
 </div>
+</section>
