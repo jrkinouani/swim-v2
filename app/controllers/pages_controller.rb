@@ -37,4 +37,8 @@ class PagesController < ApplicationController
 
   def staticswims
   end
+
+  def aquaphobie
+
+  end
 end

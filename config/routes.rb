@@ -90,6 +90,7 @@ Rails.application.routes.draw do
 
   get 'pages/mention' , to: "pages#mention"
   get 'pages/apropos', to: "pages#apropos"
+  get 'pages/aquaphobie' , to: "pages#aquaphobie"
 
   root :to => "pages#home"
 
