@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181120122807) do
+ActiveRecord::Schema.define(version: 20181122075504) do
+
+  create_table "adhesions", force: :cascade do |t|
+    t.string "name"
+    t.string "phone"
+    t.string "date"
+    t.string "adresse"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false

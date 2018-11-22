@@ -63,6 +63,7 @@ Rails.application.routes.draw do
   get 'reservationsynchros/new'
 
   resources :charges
+  resources :adhesions , only: [:show, :new, :create]
   resources :nagesynchros , only: [:index, :show]
   resources :aquaboxings , only: [:index, :show]
   resources :jardins , only: [:index, :show]
