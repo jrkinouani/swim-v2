@@ -36,6 +36,8 @@ Rails.application.routes.draw do
 
   get 'charges/new'
   get 'charges/create'
+  get 'paiements/new'
+  get 'paiements/create'
 
   get 'reservationpalmes/_form'
   get 'rreservationpalmes/index'
@@ -63,6 +65,7 @@ Rails.application.routes.draw do
   get 'reservationsynchros/new'
 
   resources :charges
+  resources :paiements
   resources :adhesions , only: [:show, :new, :create]
   resources :nagesynchros , only: [:index, :show]
   resources :aquaboxings , only: [:index, :show]

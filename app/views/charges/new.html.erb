@@ -20,7 +20,7 @@
              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                   data-label="Payez avec votre carte bleue"
                   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                  data-description="DOMTOswimnatation"
+                  data-description="Swimnatation"
                   data-amount="<%= @reservation.price.to_f*100 %>"
                   data-currency ="eur"
                   data-locale="auto">

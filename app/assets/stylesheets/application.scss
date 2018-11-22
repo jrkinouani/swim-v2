@@ -1179,6 +1179,15 @@ aside
     margin-top: 240px;
 
 }
+#content_page_assos
+{
+    margin-top: 100px;
+
+}
+input#assos.btn.btn-primary.navbar-btn
+{
+    margin-top: 20px!important;
+}
 h3.title_résa-index
 {
     margin-top: 30px;
@@ -1556,4 +1565,12 @@ h3.aquaphobie
 {
     padding-left: 15px;
     padding-right: 15px;
+}
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    float: left;
 }
