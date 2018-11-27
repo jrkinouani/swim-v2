@@ -1,4 +1,51 @@
-<header>
+
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+						<%= link_to (image_tag("/LOGO.png",class: 'imglogo')), root_path %>
+
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown"style="margin-left: 5px; margin-bottom: 3px;">
+                <a class="btn btn-info btn-rounded btn-lg dropdown-toggle"  href="#"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Aquafitness <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+									<li><%= link_to "AquaGym ", aquagyms_path %></li>
+									<li><%= link_to "Aquaboxing", aquaboxings_path %></li>
+									<li><%= link_to "Aquabike ",  aquabikes_path %></li>
+									<li><%= link_to "L'aquaphobie",  pages_aquaphobie_path %></li>
+									<li><%= link_to "StaticSwim", staticswims_path %></li>
+                </ul>
+              </li>
+							<li class="link_nav"><%= link_to "Jardin aquatique ", jardins_path, class:"btn btn-info btn-rounded btn-lg" %></li>
+							<li class="link_nav"><%= link_to "Ecole de natation ", ecoles_path, class:"btn btn-info btn-rounded btn-lg" %></li>
+							<li class="dropdown" style="margin-left: 5px; margin-bottom: 3px;">
+                <a class="btn btn-info btn-rounded btn-lg dropdown-toggle"  href="#"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bébés Nageurs <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+									<li><%= link_to "Ecole de natation ", nagepetits_path , class:"btn btn-info btn-rounded btn-lg"%></li>
+									<li><%= link_to "Jardin aquatique", jardins_path %></li>
+                </ul>
+              </li>
+
+							<li class="link_nav"><%= link_to "L'aquaphobie",  pages_aquaphobie_path, class:"btn btn-info btn-rounded btn-lg" %></li>
+							<li class="link_nav"><%= link_to "Nage Adulte ", adultes_path, class:"btn btn-info btn-rounded btn-lg" %></li>
+								<li><a href="#"><i class="fas fa-mobile-alt"></i> 0692979084</a></li>
+            </ul>
+
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+
+<!--<header>
 	<div class="cd-logo">
 	 <a href="#0">
 		<%= link_to (image_tag("/LOGO.png",class: 'imglogo')), root_path %>
@@ -14,23 +61,37 @@
 				<li><%= link_to "Nage Adulte ", adultes_path %></li>
 				<li><%= link_to "StaticSwim", staticswims_path %></li>
 				<li><a href="#"><i class="fas fa-mobile-alt"></i> 0692979084</a></li>
-
 				<li>
-					<a href="#0" class="cd-subnav-trigger"><span>Categories</span></a>
+					<div class="dropdown">
+					  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    Dropdown link
+					  </a>
 
-					<ul>
-						<li class="go-back"><a href="#0">Menu</a></li>
-						<li><%= link_to "Ecole de natation", ecoles_path, class:"Categories" %></li>
-						<li><%= link_to "Nage avec palme ", palmes_path %></li>
-						<li><%= link_to "Bébés nageurs", nagepetits_path %></li>
-						<li><%= link_to "Jardin aquatique ", jardins_path %></li>
-						<li><%= link_to "Association", new_adhesion_path %></li>
-						<li><%= link_to "Water-polo", polos_path %></li>
-						<li><a href="#0" class="placeholder">Placeholder</a></li>
-					</ul>
+					  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+					    <a class="dropdown-item" href="#">Action</a>
+					    <a class="dropdown-item" href="#">Another action</a>
+					    <a class="dropdown-item" href="#">Something else here</a>
+					  </div>
+					</div>
 				</li>
+
+
+
 			</ul> <!-- .cd-main-nav -->
 		</nav> <!-- .cd-main-nav-wrapper -->
 
-		<a href="#0" class="cd-nav-trigger">Menu<span></span></a>
 	</header>
+	<!--<li>
+
+		<a href="#0" class="cd-subnav-trigger"><span>Categories</span></a>
+
+		<!--<ul>
+			<li class="go-back"><a href="#0">Menu</a></li>
+			<li><%= link_to "Ecole de natation", ecoles_path, class:"Categories" %></li>
+			<li><%= link_to "Nage avec palme ", palmes_path %></li>
+			<li><%= link_to "Bébés nageurs", nagepetits_path %></li>
+			<li><%= link_to "Jardin aquatique ", jardins_path %></li>
+			<li><%= link_to "Water-polo", polos_path %></li>
+			<li><a href="#0" class="placeholder">Placeholder</a></li>
+		</ul>
+	</li>-->
