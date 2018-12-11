@@ -27,7 +27,12 @@ class ReservationgymsController < ApplicationController
   end
 
   def create
-    @reservationgym = Reservationgym.create!(reservationgym_params)
+    @reservationgym = Reservationgym.create(reservationgym_params)
+    if @reservationgym.errors.count > 0
+        flash[:danger] = @reservationgym.errors.full_messages.join(',')
+      redirect_to new_reservationgym_path(aquagym_id: @reservationgym.aquagym_id)
+
+    else
      aquagym = @reservationgym.aquagym
      if aquagym
        price = aquagym.price
@@ -39,6 +44,7 @@ class ReservationgymsController < ApplicationController
       @reservationgym.save
      end
      redirect_to reservationgym_path(@reservationgym)
+   end
   end
 
   def reservationgym_params

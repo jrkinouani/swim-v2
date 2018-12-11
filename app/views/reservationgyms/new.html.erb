@@ -9,6 +9,7 @@
 
     <%= form_for @reservationgym do | f |%>
       <div class="col-md-6 ">
+        <%= flash[:danger] %>
         <label for="">choisissez une date</label>
         <%= f.date_field :start,  class: "form-control"%>
     </div>
@@ -23,7 +24,7 @@
     <div class="col-md-6">
       <label for="">Sélectionnez un créneau</label>
 
-    <%= f.select :creneau, ["selectionnez un créneau", "Mardi 19h05 - 20h", "Jeudi 19h05 - 20h", "Samedi 13h - 13h45"] ,{},{ :class => "form-control"}%>
+    <%= f.select :creneau, Reservationgym.list_creneau ,{},{ :class => "form-control"}%>
     </div>
      <div class="col-md-6 col-sm-6 col-xs-12">
         <%= f.hidden_field :aquagym_id, value: @aquagym.id %>
