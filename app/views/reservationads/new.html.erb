@@ -8,10 +8,7 @@
     </div>
 
     <%= form_for @reservationad   do | f |%>
-        <div class="col-md-6 ">
-          <label for="">choisissez une date</label>
-          <%= f.date_field :start,  class: "form-control"%>
-      </div>
+      <h1 class="msg_flash"><%= flash[:danger ]%></h1>
       <div class="col-md-6">
         <label for="">Entrez votre nom complet</label>
         <%= f.text_field :name, placeholder: 'ex :Dimiti payet',  class: "form-control"  %>
@@ -23,7 +20,7 @@
       <div class="col-md-6">
         <label for="">Sélectionnez un créneau</label>
 
-      <%= f.select :creneau, ["selectionnez un créneau", "Lundi: 19h05 - 20h", "Vendredi: 19h05 - 20h"] ,{},{ :class => "form-control"}%>
+      <%= f.select :creneau, Reservationad.list_creneau  ,{},{ :class => "form-control"}%>
       </div>
        <div class="col-md-6 col-sm-6 col-xs-12">
           <%= f.hidden_field :adulte_id, value: @adulte.id %>

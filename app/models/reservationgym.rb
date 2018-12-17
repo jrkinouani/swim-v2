@@ -9,9 +9,9 @@ class Reservationgym < ApplicationRecord
 
   def self.creneau_limit
     {
-      "Mardi 19h05 - 20h" => 1,
-      "Jeudi 19h05 - 20h" => 1,
-      "Samedi 13h - 13h45" => 1
+      "Mardi 19h05 - 20h" => 12,
+      "Jeudi 19h05 - 20h" => 12,
+      "Samedi 13h - 13h45" => 12
     }
   end
 

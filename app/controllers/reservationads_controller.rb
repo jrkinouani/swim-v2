@@ -27,18 +27,24 @@ class ReservationadsController < ApplicationController
   end
 
   def create
-    @reservationad = Reservationad.create!(reservationad_params)
+    @reservationad = Reservationad.create(reservationad_params)
+    if @reservationad.errors.count > 0
+        flash[:danger] = @reservationad.errors.full_messages.join(',')
+      redirect_to new_reservationad_path(adulte_id: @reservationad.adulte_id)
+      
+    else
     adulte = @reservationad.adulte
      if adulte
        price = adulte.price
        if price
-        @reservationad.price = adulte.price 
-      else
+        @reservationad.price = adulte.price
+       else
           flash[:danger] = 'Vous avez mal renseigné les champs de textes !'
-      end
+       end
       @reservationad.save
+      end
+       redirect_to reservationad_path(@reservationad)
      end
-     redirect_to reservationad_path(@reservationad)
   end
 
   def reservationad_params
