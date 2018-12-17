@@ -27,18 +27,23 @@ class ReservationecolesController < ApplicationController
   end
 
   def create
-    @reservationecole = Reservationecole.create!(reservationecole_params)
-    ecole = @reservationecole.ecole
-     if ecole
-       price = ecole.price
-       if price
-        @reservationecole.price = ecole.price + 20
-      else
-          flash[:danger] = 'Vous avez mal renseigné les champs de textes !'
-      end
-      @reservationecole.save
+    @reservationecole = Reservationecole.create(reservationecole_params)
+    if @reservationecole.errors.count > 0
+        flash[:danger] = @reservationecole.errors.full_messages.join(',')
+      redirect_to new_reservationecole_path(ecole_id: @reservationecole.ecole_id)
+    else
+      ecole = @reservationecole.ecole
+       if ecole
+         price = ecole.price
+         if price
+          @reservationecole.price = ecole.price + 20
+        else
+            flash[:danger] = 'Vous avez mal renseigné les champs de textes !'
+        end
+        @reservationecole.save
+       end
+       redirect_to reservationecole_path(@reservationecole)
      end
-     redirect_to reservationecole_path(@reservationecole)
   end
 
   def reservationecole_params
