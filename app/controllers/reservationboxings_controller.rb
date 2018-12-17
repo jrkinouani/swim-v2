@@ -27,18 +27,23 @@ class ReservationboxingsController < ApplicationController
   end
 
   def create
-    @reservationboxing = Reservationboxing.create!(reservationboxing_params)
-    aquaboxing =  @reservationboxing.aquaboxing
+    @reservationboxing = Reservationboxing.create(reservationboxing_params)
+    if @reservationboxing.errors.count > 0
+        flash[:danger] = @reservationboxing.errors.full_messages.join(',')
+      redirect_to new_reservationboxing_path(aquaboxing_id: @reservationboxing.aquaboxing_id)
+    else
+      aquaboxing =  @reservationboxing.aquaboxing
      if aquaboxing
        price = aquaboxing.price
        if price
           @reservationboxing.price = aquaboxing.price
-      else
+       else
           flash[:danger] = 'Vous avez mal renseigné les champs de textes !'
-      end
+       end
         @reservationboxing.save
-     end
-     redirect_to reservationpalme_path(@reservationboxing)
+      end
+      redirect_to reservationboxing_path(@reservationboxing)
+    end
   end
 
   def reservationboxing_params
