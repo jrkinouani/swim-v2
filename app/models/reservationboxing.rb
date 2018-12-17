@@ -7,7 +7,7 @@ class Reservationboxing < ApplicationRecord
   end
 
   def self.creneau_limit
-    { "Lundi: 18h15 - 19h" => 1}
+    { "Lundi: 18h15 - 19h" => 15}
   end
 
   def limit_personne
