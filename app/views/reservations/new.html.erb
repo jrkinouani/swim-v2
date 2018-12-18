@@ -8,10 +8,8 @@
     </div>
 
       <%= form_for @reservation do | f |%>
-        <div class="col-md-6 ">
-          <label for="">choisissez une date</label>
-          <%= f.date_field :start,  class: "form-control"%>
-      </div>
+      <h1 class="msg_flash"><%= flash[:danger ]%></h1>
+
       <div class="col-md-6">
         <label for="">Entrez votre nom complet</label>
         <%= f.text_field :name, placeholder: 'ex :Dimiti payet',  class: "form-control"  %>
