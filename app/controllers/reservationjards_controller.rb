@@ -27,18 +27,23 @@ class ReservationjardsController < ApplicationController
   end
 
   def create
-    @reservationjard = Reservationjard.create!(reservationjard_params)
+    @reservationjard = Reservationjard.create(reservationjard_params)
+    if @reservationjard.errors.count > 0
+        flash[:danger] = @reservationjard.errors.full_messages.join(',')
+      redirect_to new_reservationjard_path(jardin_id: @reservationjard.jardin_id)
+    else
     jardin = @reservationjard.jardin
      if jardin
        price = jardin.price
        if price
         @reservationjard.price = jardin.price + 20
-      else
+       else
           flash[:danger] = 'Vous avez mal renseigné les champs de textes !'
-      end
+       end
       @reservationjard.save
+      end
+       redirect_to reservationjard_path(@reservationjard)
      end
-     redirect_to reservationjard_path(@reservationjard)
   end
 
   def reservationjard_params

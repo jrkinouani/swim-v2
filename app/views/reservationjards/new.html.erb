@@ -8,10 +8,7 @@
     </div>
 
     <%= form_for @reservationjard   do | f |%>
-        <div class="col-md-6 ">
-          <label for="">choisissez une date</label>
-          <%= f.date_field :start,  class: "form-control"%>
-      </div>
+      <h1 class="msg_flash"><%= flash[:danger ]%></h1>
       <div class="col-md-6">
         <label for="">Entrez votre nom complet</label>
         <%= f.text_field :name, placeholder: 'ex :Dimiti payet',  class: "form-control"  %>
@@ -23,7 +20,7 @@
       <div class="col-md-6">
         <label for="">Sélectionnez un créneau</label>
 
-      <%= f.select :creneau, ["selectionnez un créneau", "Mrecredi: 10h - 10h45 (2 - 3ans)", "Mrecredi: 10h50 - 11h35 (4 - 5ans)", "Samedi: 10h - 10h45 (2 - 3ans)","Samedi: 10h50 - 11h35 (4 - 5ans)","Mrecredi: 14h30 - 15h15 (2- 3ans)"] ,{},{ :class => "form-control"}%>
+      <%= f.select :creneau, Reservationjard.list_creneau ,{},{ :class => "form-control"}%>
       </div>
        <div class="col-md-6 col-sm-6 col-xs-12">
           <%= f.hidden_field :jardin_id, value: @jardin.id %>
