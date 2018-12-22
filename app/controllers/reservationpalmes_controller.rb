@@ -27,7 +27,12 @@ class ReservationpalmesController < ApplicationController
   end
 
   def create
-    @reservationpalme = Reservationpalme.create!(reservationpalme_params)
+    @reservationpalme = Reservationpalme.create(reservationpalme_params)
+    if @reservationpalme.errors.count > 0
+        flash[:danger] = @reservationpalme.errors.full_messages.join(',')
+      redirect_to new_reservationpalme_path(adulte_id: @reservationpalme.palme_id)
+
+    else
     palme = @reservationpalme.palme
      if palme
        price = palme.price
@@ -37,8 +42,9 @@ class ReservationpalmesController < ApplicationController
           flash[:danger] = 'Vous avez mal renseigné les champs de textes !'
       end
       @reservationpalme.save
+       end
+       redirect_to reservationpalme_path(@reservationpalme)
      end
-     redirect_to reservationpalme_path(@reservationpalme)
   end
 
   def reservationpalme_params
