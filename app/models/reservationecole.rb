@@ -16,14 +16,14 @@ class Reservationecole < ApplicationRecord
 
   def self.creneau_limit
     {
-      "Lundi: 16h35 - 17h20 (6-8 ans)" =>  8,
-      "Mardi 16h35 - 17h20 (Grd débutant 5-7 ans)" =>  8,
-      "Mardi 17h25 - 18h10 (9-12 ans)" =>  8,
-      "Mercredi 14H - 14h45 (6 -8 ans)" =>  8,,
-      "Mercredi 14h45 -15h30 (9-12 ans)"=>  8,
-      "Vendredi 16h35 - 17h 20 (6-8ans)" =>  8,
-      "Vendredi 17h25 -18h10 (9-12 ans)" =>  8,
-      "Vendredi 18h15 -19h (Ados 12-17 ans)" =>  8,
+      "Lundi: 16h35 - 17h20 (6-8 ans)" => 8,
+      "Mardi 16h35 - 17h20 (Grd débutant 5-7 ans)" => 8,
+      "Mardi 17h25 - 18h10 (9-12 ans)" => 8,
+      "Mercredi 14H - 14h45 (6 -8 ans)" => 8,
+      "Mercredi 14h45 -15h30 (9-12 ans)"=> 8,
+      "Vendredi 16h35 - 17h 20 (6-8ans)" => 8,
+      "Vendredi 17h25 -18h10 (9-12 ans)" => 8,
+      "Vendredi 18h15 -19h (Ados 12-17 ans)" => 8,
     }
    end
 
