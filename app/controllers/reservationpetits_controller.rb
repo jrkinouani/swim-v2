@@ -27,18 +27,23 @@ class ReservationpetitsController < ApplicationController
   end
 
   def create
-    @reservationpetit = Reservationpetit.create!(reservationpetit_params)
-    nagepetit = @reservationpetit.nagepetit
-     if nagepetit
-       price = nagepetit.price
-       if price
-        @reservationpetit.price = nagepetit.price + 20
-      else
-          flash[:danger] = 'Vous avez mal renseigné les champs de textes !'
-      end
-      @reservationpetit.save
+    @reservationpetit = Reservationpetit.create(reservationpetit_params)
+    if @reservationpetit.errors.count > 0
+        flash[:danger] = @reservationpetit.errors.full_messages.join(',')
+      redirect_to new_reservationpetit_path(nagepetit_id: @reservationpetit.nagepetit_id)
+    else
+      nagepetit = @reservationpetit.nagepetit
+       if nagepetit
+         price = nagepetit.price
+         if price
+          @reservationpetit.price = nagepetit.price + 20
+         else
+            flash[:danger] = 'Vous avez mal renseigné les champs de textes !'
+         end
+        @reservationpetit.save
+       end
+       redirect_to reservationpetit_path(@reservationpetit)
      end
-     redirect_to reservationpetit_path(@reservationpetit)
   end
 
   def reservationpetit_params
