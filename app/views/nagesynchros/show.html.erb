@@ -6,12 +6,12 @@
       <div class="card mb-5 mb-lg-0">
         <div class="card-body">
            <h5 class="card-title text-muted text-uppercase text-center"><%= @nagesynchro.title%></h5>
-           <h6 class="card-price text-center"><%= @nagesynchro.price%> €<span class="period">/La séance</span></h6>
+           <h6 class="card-price text-center"><%= @nagesynchro.price%> €<span class="period">/La séance <br>+  20 € de frais d'adhésion annuelle</span></h6>
           <hr>
           <ul class="fa-ul">
             <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @nagesynchro.nbpers %> Personne (s) maxi</li>
             <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @nagesynchro.nbseance %> cours </li>
-            <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @nagesynchro.periode %> Occasionnel </li>
+            <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @nagesynchro.periode %>  </li>
              <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @nagesynchro.duree %> minutes</li>
            </ul>
            <%= link_to 'Faire une réservation', new_reservationsynchro_path(nagesynchro_id: @nagesynchro.id), class: "btn btn-primary navbar-btn", id: "btn_car_show"%>

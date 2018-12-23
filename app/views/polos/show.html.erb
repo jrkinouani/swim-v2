@@ -11,7 +11,7 @@
           <ul class="fa-ul">
             <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @polo.nbpers %> Personne (s) maxi</li>
             <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @polo.nbseance %> cours </li>
-            <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @polo.periode %> Occasionnel </li>
+            <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @polo.periode %>  </li>
              <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @polo.duree %> minutes</li>
            </ul>
            <%= link_to 'Faire une réservation', new_reservationpolo_path(polo_id: @polo.id), class: "btn btn-primary navbar-btn", id: "btn_car_show"%>
