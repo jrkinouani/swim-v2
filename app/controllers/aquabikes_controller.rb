@@ -4,7 +4,7 @@ class AquabikesController < ApplicationController
   def new
     @aquabike = Aquabike.new
   end
-  
+
   def create
     @aquabike = Aquabike.create(aquabike_params)
     redirect_to aquabike_path(@aquabike)
