@@ -30,7 +30,7 @@ body {
   font-size: 1.6rem;
   font-family: "PT Sans", sans-serif;
   color: #33414a;
-  background-color: #f2f2f2;
+  /*background-color: #f2f2f2;*/
 }
 nav.navbar.navbar-default {
     background-color: #fff;
@@ -103,6 +103,7 @@ h3.activite
 {
     margin-top: 30px;
     margin-bottom: 30px;
+    background-color: #fff;
 }
 h3.temoin
 {
@@ -394,12 +395,23 @@ section.pricing {
   background: linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari */
 }
+.card-body
+{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 20px;
+    background-color: #fff;
+}
+section.pricing.py-5
+{
+    background-color: #f5f6f5;
+}
 
 .pricing .card {
   border: none;
   border-radius: 1rem;
   transition: all 0.2s;
-  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0.5rem  ;
 }
 
 .pricing hr {
