@@ -32,7 +32,7 @@
           <div class="card-body">
             <% @ecoles.each do |ecole | %>
             <h5 class="card-title text-muted text-uppercase text-center"><%=  ecole.title%></h5>
-             <h6 class="card-price text-center"><%=   ecole.price%> €<span class="period">+  20 € de frais d'adhésion annuelle</span></h6>
+             <h6 class="card-price text-center"><%=   ecole.price%> €<span class="period"><br>+  20 € de frais d'adhésion annuelle</span></h6>
             <hr>
             <ul class="fa-ul">
               <li><span class="fa-li"><i class="fas fa-check"></i></span><%=   ecole.nbpers %> Personne (s) maxi/ séance</li>
