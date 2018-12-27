@@ -43,26 +43,24 @@
  <section class="pricing py-5">
   <div class="container">
     <div class="row">
-      <!-- Free Tier -->
-      <div class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6">
-        <div class="card mb-5 mb-lg-0">
+      <% @aquagyms.each do | aquagym | %>
+        <div class="col-md-3">
+          <div class="card mb-5 mb-lg-0">
           <div class="card-body">
-            <% @aquagyms.each do | aquagym | %>
             <h5 class="card-title text-muted text-uppercase text-center"><%= aquagym.title%></h5>
-             <h6 class="card-price text-center"><%= aquagym.price%> €<span class="period">/La séance</span></h6>
+             <h6 class="card-price text-center"><%= aquagym.price%> €<span class="period">+  20 € de frais d'adhésion annuelle</span></h6>
             <hr>
             <ul class="fa-ul">
-              <li><span class="fa-li"><i class="fas fa-check"></i></span><%= aquagym.nbpers %> Personne (s) maxi</li>
+              <li><span class="fa-li"><i class="fas fa-check"></i></span><%= aquagym.nbpers %> Personne (s) maxi/ séance</li>
               <li><span class="fa-li"><i class="fas fa-check"></i></span><%= aquagym.nbseance %> cours/semaine </li>
               <li><span class="fa-li"><i class="fas fa-check"></i></span><%= aquagym.periode %> </li>
                <li><span class="fa-li"><i class="fas fa-check"></i></span><%= aquagym.duree %> minutes</li>
-
              </ul>
             <h4><%= button_to "Reservez maintenant", aquagym_path(aquagym), :class => "btn btn-block btn-primary text-uppercase", :method => :get %></h4>
           </div>
-          <% end %>
         </div>
       </div>
+      <% end %>
     </div>
   </div>
 </section>
