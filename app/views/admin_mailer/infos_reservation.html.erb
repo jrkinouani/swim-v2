@@ -1,10 +1,16 @@
 <div class="container">
   <div class="row">
-    <p>
-      Assalamou aleykoum le marcheur marocain, <br> <br>
-      Nouvelle réservation vient d'arriver :
-      de la part de ..., <br>
-      
-    </p>
+
+      Assalamou aleykoum le marcheur marocain mdr :-), <br> <br>
+      Nouvelle réservation vient d'arriver pour la nage adulte:
+      <br>
+      de la part de <%=@reservationad.name  %><br>
+      <h3>Pour le :<%= @reservationad.start %> </h3>
+      <h3>Le créneau de : <%= @reservationad.creneau %></h3>
+      <h4>Numéro de téléphone : <%= @reservationad.phone %></h4> <br/>
+      <h4>Prix total : <span><%= @reservationad.price %> euros</span></h4><br/>
+      <br>
+
+      <h4>La personne doit juste payer et tout sera ok pour cette réservation.</h4>
   </div>
 </div>

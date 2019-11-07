@@ -31,7 +31,7 @@ class ReservationadsController < ApplicationController
     if @reservationad.errors.count > 0
         flash[:danger] = @reservationad.errors.full_messages.join(',')
       redirect_to new_reservationad_path(adulte_id: @reservationad.adulte_id)
-      
+
     else
     adulte = @reservationad.adulte
      if adulte
@@ -42,6 +42,7 @@ class ReservationadsController < ApplicationController
           flash[:danger] = 'Vous avez mal renseigné les champs de textes !'
        end
       @reservationad.save
+       AdminMailer.infos_reservation(@reservationad).deliver_now
       end
        redirect_to reservationad_path(@reservationad)
      end
