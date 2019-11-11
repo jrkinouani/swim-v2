@@ -2,7 +2,7 @@
 <div class="container" >
  <div class="row">
   <% if @reservation %>
-   <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_merci">
+   <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_paiement">
     <h3 class="text_systeme">Merci pour votre paiement de <strong><%= @reservation.price %></strong> euros! <br/>
       <h3>Pour completer votre inscription, veuillez télécharger et remplir ses documents ci-dessous :</h3> <br>
       <ul>
@@ -13,7 +13,7 @@
         <li><a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8TGJ4UVlsNUZqUEFqcjVMSUwwZUNqRkFXMWpZ/view?usp=sharing" target="_blank" </a> Tarifs adultes</li>
       </ul>
    <% elsif  @reservationgym %>
-     <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_merci">
+     <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_paiement">
      <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservationgym.price %></strong> euros! <br/>
        <h3>Pour completer votre inscription, veuillez télécharger et remplir ses documents ci-dessous :</h3> <br>
        <ul>
@@ -23,7 +23,7 @@
          <li><a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8TGJ4UVlsNUZqUEFqcjVMSUwwZUNqRkFXMWpZ/view?usp=sharing" target="_blank" </a> Tarifs adultes</li>
        </ul>
    <% elsif  @reservationpalme %>
-     <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_merci">
+     <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_paiement">
      <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservationpalme.price %></strong> euros! <br/>
        <h3>Pour completer votre inscription, veuillez télécharger et remplir ses documents ci-dessous :</h3> <br>
        <ul>
@@ -33,7 +33,7 @@
          <li><a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8TGJ4UVlsNUZqUEFqcjVMSUwwZUNqRkFXMWpZ/view?usp=sharing" target="_blank" </a> Tarifs adultes</li>
        </ul>
    <% elsif  @reservationstatic %>
-      <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_merci">
+      <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_paiement">
       <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservationstatic.price %></strong> euros! <br/>
         <h3>Pour completer votre inscription, veuillez télécharger et remplir ses documents ci-dessous :</h3> <br>
         <ul>
@@ -43,10 +43,10 @@
           <li><a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8TGJ4UVlsNUZqUEFqcjVMSUwwZUNqRkFXMWpZ/view?usp=sharing" target="_blank" </a> Tarifs adultes</li>
         </ul>
    <% elsif  @reservationcour %>
-    <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_merci">
+    <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_paiement">
     <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservationcour.price %></strong> euros! <br/>
    <% elsif  @reservationjard %>
-      <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_merci">
+      <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_paiement">
       <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservationjard.price %></strong> euros! <br/>
         <h3>Pour completer votre inscription, veuillez télécharger et remplir ses documents ci-dessous :</h3> <br>
         <ul>
@@ -56,7 +56,7 @@
           <li><a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8dU5lLUxqOWVvamJSX0JTNU5lWXY1MjBPaURZ/view?usp=sharing" target="_blank" </a> Tarifs enfants</li>
         </ul>
    <% elsif  @reservationad %>
-    <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_merci">
+    <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_paiement">
     <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservationad.price %></strong> euros! <br/>
       <h3>Pour completer votre inscription, veuillez télécharger et remplir ses documents ci-dessous :</h3> <br>
       <ul>
@@ -66,7 +66,7 @@
         <li><a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8TGJ4UVlsNUZqUEFqcjVMSUwwZUNqRkFXMWpZ/view?usp=sharing" target="_blank" </a> Tarifs adultes</li>
       </ul>
    <% elsif  @reservationecole %>
-      <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_merci">
+      <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_paiement">
       <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservationecole.price %></strong> euros! <br/>
         <h3>Pour completer votre inscription, veuillez télécharger et remplir ses documents ci-dessous :</h3> <br>
         <ul>
@@ -76,7 +76,7 @@
           <li><a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8dU5lLUxqOWVvamJSX0JTNU5lWXY1MjBPaURZ/view?usp=sharing" target="_blank" </a> Tarifs enfants</li>
         </ul>
    <% elsif  @reservationpetit %>
-    <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_merci">
+    <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_paiement">
     <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservationpetit.price %></strong> euros! <br/>
       <h3>Pour completer votre inscription, veuillez télécharger et remplir ses documents ci-dessous :</h3> <br>
       <ul>
@@ -86,13 +86,13 @@
         <li><a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8dU5lLUxqOWVvamJSX0JTNU5lWXY1MjBPaURZ/view?usp=sharing" target="_blank" </a> Tarifs enfants</li>
       </ul>
       <% elsif  @reservationsynchro %>
-       <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_merci">
+       <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_paiement">
        <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservationsynchro.price %></strong> euros! <br/>
    <% elsif  @reservationpolo %>
-      <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_merci">
+      <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_paiement">
       <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservationpolo.price %></strong> euros! <br/>
    <% else %>
-     <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_merci">
+     <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_paiement">
      <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservationad.price %></strong> euros! <br/>
   <% end %>
 
