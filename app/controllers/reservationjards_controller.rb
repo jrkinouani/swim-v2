@@ -41,6 +41,7 @@ class ReservationjardsController < ApplicationController
           flash[:danger] = 'Vous avez mal renseigné les champs de textes !'
        end
       @reservationjard.save
+      AdminMailer.info_resa_jardin(@reservationjard).deliver_now
       end
        redirect_to reservationjard_path(@reservationjard)
      end

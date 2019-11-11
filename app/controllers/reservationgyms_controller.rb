@@ -42,6 +42,7 @@ class ReservationgymsController < ApplicationController
           flash[:danger] = 'Vous avez mal renseigné les champs de textes !'
       end
       @reservationgym.save
+      AdminMailer.info_resa_aquagym(@reservationgym).deliver_now
      end
      redirect_to reservationgym_path(@reservationgym)
    end

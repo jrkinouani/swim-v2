@@ -41,6 +41,7 @@ class ReservationstaticsController < ApplicationController
             flash[:danger] = 'Vous avez mal renseigné les champs de textes !'
         end
         @reservationstatic.save
+        AdminMailer.info_resa_static(@reservationstatic).deliver_now
        end
        redirect_to reservationstatic_path(@reservationstatic)
      end

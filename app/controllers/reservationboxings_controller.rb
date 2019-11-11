@@ -41,6 +41,7 @@ class ReservationboxingsController < ApplicationController
           flash[:danger] = 'Vous avez mal renseigné les champs de textes !'
        end
         @reservationboxing.save
+        AdminMailer.info_resa_boxing(@reservationboxing).deliver_now
       end
       redirect_to reservationboxing_path(@reservationboxing)
     end
