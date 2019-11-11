@@ -11,8 +11,8 @@
               </div>
             <% end %>
               <h3 class="text_systeme">La fenêtre de paiement
-                sécurisée, s'ouvre en cliquant <span class="glyphicon glyphicon-file" aria-hidden="true"></span>  sur le bouton ci-dessous, <br/>
-                  pour regler le montant de <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+                sécurisée, s'ouvre en cliquant sur le bouton ci-dessous, <br/>
+                pour regler le montant de
               <% if @reservation %>
               <h3><span><%= @reservation.price.to_f %></span> €</h3>
               <%= hidden_field_tag :reservation_id,  @reservation.id %>
