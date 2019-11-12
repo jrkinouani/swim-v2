@@ -35,10 +35,10 @@
              <h6 class="card-price text-center"><%=  nagepetit.price%> €<span class="period"><br>+  20 € de frais d'adhésion annuelle</span></h6>
             <hr>
             <ul class="fa-ul">
-              <li><span class="fa-li"><i class="fas fa-check"></i></span><%=  nagepetit.nbpers %> Personne (s) maxi/séance</li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span><%=  nagepetit.nbseance %> cours </li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span><%=  nagepetit.periode %> </li>
-               <li><span class="fa-li"><i class="fas fa-check"></i></span><%=  nagepetit.duree %> minutes</li>
+              <li><span class="fa-li"><i class="fas fa-check"></i></span><%= nagepetit.nbpers %> Personne(s) maxi/séance</li>
+              <li><span class="fa-li"><i class="fas fa-check"></i></span><%= nagepetit.nbseance %> cours/semaine</li>
+              <li><span class="fa-li"><i class="fas fa-check"></i></span><%= nagepetit.periode %> </li>
+               <li><span class="fa-li"><i class="fas fa-check"></i></span><%= nagepetit.duree %> minutes</li>
 
              </ul>
             <h4><%= button_to "Reservez maintenant",  nagepetit_path( nagepetit), :class => "btn btn-block btn-primary text-uppercase", :method => :get %></h4>
