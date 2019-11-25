@@ -30,9 +30,17 @@
 							<li class="link_nav"><%= link_to "Ecole de natation ", ecoles_path, class:"btn btn-info btn-rounded btn-lg" %></li>
               <li class="link_nav"><%= link_to "Bébés nageurs ", nagepetits_path, class:"btn btn-info btn-rounded btn-lg" %></li>
 
-							<li class="link_nav"><%= link_to "L'aquaphobie",  pages_aquaphobie_path, class:"btn btn-info btn-rounded btn-lg" %></li>
+							<!--<li class="link_nav"><%= link_to "L'aquaphobie",  pages_aquaphobie_path, class:"btn btn-info btn-rounded btn-lg" %></li>-->
 							<li class="link_nav"><%= link_to "Nage Adulte ", adultes_path, class:"btn btn-info btn-rounded btn-lg" %></li>
-								<li><a href="#"><i class="fas fa-mobile-alt"></i> 0692979084</a></li>
+							<li><a href="#"><i class="fas fa-mobile-alt"></i> 0692979084</a></li>
+              <li class="dropdown"style="margin-left: 5px; margin-bottom: 3px;">
+                <a class="btn btn-info btn-rounded btn-lg dropdown-toggle"  href="#"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Aquafitness <span class="caret"></span></a>
+                <ul class="dropdown-menu"	>
+									<li><%= link_to "AquaGym ", aquagyms_path %></li>
+                  <li><%= link_to "inscription",  new_user_registration_path %></li>
+                  <li><%= link_to "Connexion",  new_user_session_path %></li>
+                </ul>
+              </li>
             </ul>
 
           </div><!--/.nav-collapse -->

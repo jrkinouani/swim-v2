@@ -1,16 +1,25 @@
 Rails.application.routes.draw do
 
+    devise_for :users, path_names: {
+        sign_in: 'login',
+        sign_out: 'logout',
+        sign_up: 'signup',}
+
+      devise_for :admin, path_names: {
+        sign_in: 'login',
+        sign_out: 'logout',
+        sign_up: 'signup',},
+        :controllers => {registrations:  "admins/registrations"}
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
+
   get 'nagesynchros/index'
   get 'nagesynchros/show'
   get 'polos/index'
   get 'polos/show'
 
-  devise_for :admin, path_names: {
-    sign_in: 'login',
-    sign_out: 'logout',
-    sign_up: 'signup',
-  }
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
+
   get 'staticswims/show'
   get 'staticswims/index'
   get 'adultes/show'
