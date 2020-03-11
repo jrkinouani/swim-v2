@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "simple_calendar";
+
 h1.msg_flash
 {
     color: red;
@@ -936,4 +938,8 @@ label {
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.margin-top {
+  margin-top: 20px;
 }
