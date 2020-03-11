@@ -1,9 +1,9 @@
 <section id="banner_charges" data-blink-id="pvb1pxmp5cau7rq4c24yp" style="background-size: cover;background-position: center center;background-repeat: no-repeat;background-image: url(/AQUAGYM.jpg);" >
 <div class="container" >
  <div class="row">
+  <% if @reservation %>
    <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_paiement">
-     <h3 class="text_systeme">Merci pour votre paiement de <strong><%= @amount.to_i/100 %></strong> euros! <br/>
-     <% if @resa_type == "Reservation" %>
+    <h3 class="text_systeme">Merci pour votre paiement de <strong><%= @reservation.price %></strong> euros! <br/>
       <h3>Pour completer votre inscription, veuillez télécharger et remplir ses documents ci-dessous :</h3> <br>
       <ul>
         <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8ODRoeWNoeWtCWVJ4MUJWbG41b083VHpqek8w/view?usp=sharing"  target="_blank">Reglement intérieur</a></li>
@@ -12,7 +12,9 @@
         <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8M2xneG15VFRLUU1KVHhHOHByTm1tZ1U4bHc4/view?usp=sharing"  target="_blank">Fiche inscription adulte</a></li>
         <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8TGJ4UVlsNUZqUEFqcjVMSUwwZUNqRkFXMWpZ/view?usp=sharing" target="_blank" </a> Tarifs adultes</li>
       </ul>
-     <% elsif  @resa_type == "Reservationgym" %>
+   <% elsif  @reservationgym %>
+     <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_paiement">
+     <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservationgym.price %></strong> euros! <br/>
        <h3>Pour completer votre inscription, veuillez télécharger et remplir ses documents ci-dessous :</h3> <br>
        <ul>
          <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8ODRoeWNoeWtCWVJ4MUJWbG41b083VHpqek8w/view?usp=sharing"  target="_blank">Reglement intérieur</a></li>
@@ -20,31 +22,19 @@
          <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8M2xneG15VFRLUU1KVHhHOHByTm1tZ1U4bHc4/view?usp=sharing"  target="_blank">Fiche inscription adulte</a></li>
          <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8TGJ4UVlsNUZqUEFqcjVMSUwwZUNqRkFXMWpZ/view?usp=sharing" target="_blank" </a> Tarifs adultes</li>
        </ul>
-     <% elsif  @resa_type == "Reservationpalme" %>
-         <h3>Pour completer votre inscription, veuillez télécharger et remplir ses documents ci-dessous :</h3> <br>
-         <ul>
-           <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8ODRoeWNoeWtCWVJ4MUJWbG41b083VHpqek8w/view?usp=sharing"  target="_blank">Reglement intérieur</a></li>
-           <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8ZkVVSWRJTU5xVHlBSmlSS3F2cXVGVkw0cmZZ/view?usp=sharing" target="_blank">Planning des cours</a></li>
-           <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8M2xneG15VFRLUU1KVHhHOHByTm1tZ1U4bHc4/view?usp=sharing"  target="_blank">Fiche inscription adulte</a></li>
-           <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8TGJ4UVlsNUZqUEFqcjVMSUwwZUNqRkFXMWpZ/view?usp=sharing" target="_blank" </a> Tarifs adultes</li>
-         </ul>
-     <% elsif  @resa_type == "Reservationstatic" %>
-          <h3>Pour completer votre inscription, veuillez télécharger et remplir ses documents ci-dessous :</h3> <br>
-          <ul>
-            <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8ODRoeWNoeWtCWVJ4MUJWbG41b083VHpqek8w/view?usp=sharing"  target="_blank">Reglement intérieur</a></li>
-            <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8ZkVVSWRJTU5xVHlBSmlSS3F2cXVGVkw0cmZZ/view?usp=sharing" target="_blank">Planning des cours</a></li>
-            <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8M2xneG15VFRLUU1KVHhHOHByTm1tZ1U4bHc4/view?usp=sharing"  target="_blank">Fiche inscription adulte</a></li>
-            <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8TGJ4UVlsNUZqUEFqcjVMSUwwZUNqRkFXMWpZ/view?usp=sharing" target="_blank" </a> Tarifs adultes</li>
-          </ul>
-     <% elsif  @resa_type == "Reservationjard" %>
-          <h3>Pour completer votre inscription, veuillez télécharger et remplir ses documents ci-dessous :</h3> <br>
-          <ul>
-            <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8ODRoeWNoeWtCWVJ4MUJWbG41b083VHpqek8w/view?usp=sharing"  target="_blank">Reglement intérieur</a></li>
-            <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8ZkVVSWRJTU5xVHlBSmlSS3F2cXVGVkw0cmZZ/view?usp=sharing" target="_blank">Planning des cours</a></li>
-            <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8a1JHWFlMRkhUdElzRUtuQ21xcDFhTWZOLUhJ/view?usp=sharing"  target="_blank">Fiche inscription enfant</a></li>
-            <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8dU5lLUxqOWVvamJSX0JTNU5lWXY1MjBPaURZ/view?usp=sharing" target="_blank" </a> Tarifs enfants</li>
-          </ul>
-     <% elsif  @resa_type == "Reservationad" %>
+   <% elsif  @reservationpalme %>
+     <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_paiement">
+     <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservationpalme.price %></strong> euros! <br/>
+       <h3>Pour completer votre inscription, veuillez télécharger et remplir ses documents ci-dessous :</h3> <br>
+       <ul>
+         <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8ODRoeWNoeWtCWVJ4MUJWbG41b083VHpqek8w/view?usp=sharing"  target="_blank">Reglement intérieur</a></li>
+         <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8ZkVVSWRJTU5xVHlBSmlSS3F2cXVGVkw0cmZZ/view?usp=sharing" target="_blank">Planning des cours</a></li>
+         <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8M2xneG15VFRLUU1KVHhHOHByTm1tZ1U4bHc4/view?usp=sharing"  target="_blank">Fiche inscription adulte</a></li>
+         <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8TGJ4UVlsNUZqUEFqcjVMSUwwZUNqRkFXMWpZ/view?usp=sharing" target="_blank" </a> Tarifs adultes</li>
+       </ul>
+   <% elsif  @reservationstatic %>
+      <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_paiement">
+      <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservationstatic.price %></strong> euros! <br/>
         <h3>Pour completer votre inscription, veuillez télécharger et remplir ses documents ci-dessous :</h3> <br>
         <ul>
           <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8ODRoeWNoeWtCWVJ4MUJWbG41b083VHpqek8w/view?usp=sharing"  target="_blank">Reglement intérieur</a></li>
@@ -52,7 +42,12 @@
           <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8M2xneG15VFRLUU1KVHhHOHByTm1tZ1U4bHc4/view?usp=sharing"  target="_blank">Fiche inscription adulte</a></li>
           <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8TGJ4UVlsNUZqUEFqcjVMSUwwZUNqRkFXMWpZ/view?usp=sharing" target="_blank" </a> Tarifs adultes</li>
         </ul>
-     <% elsif  @resa_type == "Reservationecole" %>
+   <% elsif  @reservationcour %>
+    <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_paiement">
+    <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservationcour.price %></strong> euros! <br/>
+   <% elsif  @reservationjard %>
+      <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_paiement">
+      <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservationjard.price %></strong> euros! <br/>
         <h3>Pour completer votre inscription, veuillez télécharger et remplir ses documents ci-dessous :</h3> <br>
         <ul>
           <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8ODRoeWNoeWtCWVJ4MUJWbG41b083VHpqek8w/view?usp=sharing"  target="_blank">Reglement intérieur</a></li>
@@ -60,8 +55,19 @@
           <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8a1JHWFlMRkhUdElzRUtuQ21xcDFhTWZOLUhJ/view?usp=sharing"  target="_blank">Fiche inscription enfant</a></li>
           <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8dU5lLUxqOWVvamJSX0JTNU5lWXY1MjBPaURZ/view?usp=sharing" target="_blank" </a> Tarifs enfants</li>
         </ul>
-        <%=  link_to 'Faire une réservation', new_reservationecole_path(ecole_id: @reservation.ecole_id), class: "btn btn-primary navbar-btn", id: "btn_car_show"  %>
-     <% elsif  @resa_type == "Reservationpetit" %>
+   <% elsif  @reservationad %>
+    <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_paiement">
+    <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservationad.price %></strong> euros! <br/>
+      <h3>Pour completer votre inscription, veuillez télécharger et remplir ses documents ci-dessous :</h3> <br>
+      <ul>
+        <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8ODRoeWNoeWtCWVJ4MUJWbG41b083VHpqek8w/view?usp=sharing"  target="_blank">Reglement intérieur</a></li>
+        <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8ZkVVSWRJTU5xVHlBSmlSS3F2cXVGVkw0cmZZ/view?usp=sharing" target="_blank">Planning des cours</a></li>
+        <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8M2xneG15VFRLUU1KVHhHOHByTm1tZ1U4bHc4/view?usp=sharing"  target="_blank">Fiche inscription adulte</a></li>
+        <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8TGJ4UVlsNUZqUEFqcjVMSUwwZUNqRkFXMWpZ/view?usp=sharing" target="_blank" </a> Tarifs adultes</li>
+      </ul>
+   <% elsif  @reservationecole %>
+      <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_paiement">
+      <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservationecole.price %></strong> euros! <br/>
         <h3>Pour completer votre inscription, veuillez télécharger et remplir ses documents ci-dessous :</h3> <br>
         <ul>
           <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8ODRoeWNoeWtCWVJ4MUJWbG41b083VHpqek8w/view?usp=sharing"  target="_blank">Reglement intérieur</a></li>
@@ -69,8 +75,28 @@
           <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8a1JHWFlMRkhUdElzRUtuQ21xcDFhTWZOLUhJ/view?usp=sharing"  target="_blank">Fiche inscription enfant</a></li>
           <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8dU5lLUxqOWVvamJSX0JTNU5lWXY1MjBPaURZ/view?usp=sharing" target="_blank" </a> Tarifs enfants</li>
         </ul>
-    <% end %>
+   <% elsif  @reservationpetit %>
+    <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_paiement">
+    <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservationpetit.price %></strong> euros! <br/>
+      <h3>Pour completer votre inscription, veuillez télécharger et remplir ses documents ci-dessous :</h3> <br>
+      <ul>
+        <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8ODRoeWNoeWtCWVJ4MUJWbG41b083VHpqek8w/view?usp=sharing"  target="_blank">Reglement intérieur</a></li>
+        <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8ZkVVSWRJTU5xVHlBSmlSS3F2cXVGVkw0cmZZ/view?usp=sharing" target="_blank">Planning des cours</a></li>
+        <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8a1JHWFlMRkhUdElzRUtuQ21xcDFhTWZOLUhJ/view?usp=sharing"  target="_blank">Fiche inscription enfant</a></li>
+        <li><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <a href="https://drive.google.com/file/d/0B1wXQcCs0Oc8dU5lLUxqOWVvamJSX0JTNU5lWXY1MjBPaURZ/view?usp=sharing" target="_blank" </a> Tarifs enfants</li>
+      </ul>
+      <% elsif  @reservationsynchro %>
+       <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_paiement">
+       <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservationsynchro.price %></strong> euros! <br/>
+   <% elsif  @reservationpolo %>
+      <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_paiement">
+      <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservationpolo.price %></strong> euros! <br/>
+   <% else %>
+     <div class="col-lg-4 col-md-offset-4 col-md-4 col-xs-12" id="zone_paiement">
+     <h3 class="text_systeme">Merci pour votre paiement <strong><%= @reservationad.price %></strong> euros! <br/>
+  <% end %>
 
+   </h3>
   </div>
  </div>
 </div>
