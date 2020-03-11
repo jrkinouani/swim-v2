@@ -1,0 +1,27 @@
+<div class="row">
+  <p>Nombre de séance restante <%= @selected_resa_count %></p>
+  <% @selected_resa.oncoming.each do |resa| %>
+    <p>
+      <%= link_to(selected_resa_path(id: resa.id, resource_name: resource_name, resource_type: resource_type, resa_url: resa_url), remote: true, method: :delete, class: 'red', data: { confirm: "Are you sure you want to delete this image?" }) do %>
+        <button type="button" class="btn btn-danger">
+          X
+        </button>
+      <% end %>
+      le
+      <%= t('date.abbr_day_names')[resa.date.strftime('%w').to_i] %>
+      <%= resa.date.strftime('%d') %>
+      <%= t('date.abbr_month_names')[resa.date.strftime('%m').to_i] %>
+      <%= resa.date.strftime('%Y') %>
+       à
+      <%= resa.title %>
+    </p>
+  <% end %>
+</div>
+<div class="row">
+  <% if @selected_resa_count <= 0 %>
+    <p class="col-lg-4">Vous avez epuisé toutes vos séance de piscine</p>
+    <p class="col-lg-3">
+      <%= link_to "Reservez maintenant",  resa_url, :class => "btn btn-block btn-primary text-uppercase", :method => :get %>
+    </p>
+  <% end %>
+</div>

@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
 
-    devise_for :users, path_names: {
-        sign_in: 'login',
-        sign_out: 'logout',
-        sign_up: 'signup',}
+  devise_for :users, path_names: {
+      sign_in: 'login',
+      sign_out: 'logout',
+      sign_up: 'signup',}
 
-      devise_for :admin, path_names: {
-        sign_in: 'login',
-        sign_out: 'logout',
-        sign_up: 'signup',},
-        :controllers => {registrations:  "admins/registrations"}
+  devise_for :admin, path_names: {
+    sign_in: 'login',
+    sign_out: 'logout',
+    sign_up: 'signup',},
+    :controllers => {registrations:  "admins/registrations"}
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
 
@@ -100,6 +101,7 @@ Rails.application.routes.draw do
   resources :reservationecoles, only: [:index, :show, :new, :create]
   resources :reservationpolos, only: [:index, :show, :new, :create]
   resources :reservationsynchros, only: [:index, :show, :new, :create]
+  resources :selected_resa, only: [:create, :destroy]
 
   get 'pages/mention' , to: "pages#mention"
   get 'pages/apropos', to: "pages#apropos"
