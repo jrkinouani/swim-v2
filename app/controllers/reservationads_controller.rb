@@ -1,5 +1,6 @@
 class ReservationadsController < ApplicationController
   before_action :set_reservationad, only: [:show, :destroy, :edit, :update]
+  before_action :authenticate_user!
 
   def index
     @reservationads = Reservationad.includes(:aquabike).all
@@ -24,6 +25,8 @@ class ReservationadsController < ApplicationController
   def new
     @adulte = Adulte.find(params[:adulte_id])
     @reservationad = Reservationad.new
+    @selected_resa = SelectedResa.where(user_id: current_user.id, resource_id: @adulte.id, resource_type: 'Adulte')
+    @selected_resa_count = Reservationpetit.where(nagepetit_id: @adulte.id).sum(:nb_resa) - @selected_resa.count
   end
 
   def create

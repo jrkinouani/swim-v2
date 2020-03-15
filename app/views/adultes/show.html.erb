@@ -14,7 +14,8 @@
             <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @adulte.periode %>  </li>
              <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @adulte.duree %> minutes</li>
            </ul>
-           <%= link_to 'Faire une réservation', new_reservationad_path(adulte_id: @adulte.id), class: "btn btn-primary navbar-btn", id: "btn_car_show"%>
+           <%= render partial: 'charges/form', locals: {resource: @adulte, resa_type: 'Reservationad'} %>
+           <%# link_to 'Faire une réservation', new_reservationad_path(adulte_id: @adulte.id), class: "btn btn-primary navbar-btn", id: "btn_car_show"%>
 
         </div>
        </div>

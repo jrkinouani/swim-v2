@@ -39,24 +39,27 @@
   <div class="container">
     <div class="row">
       <% @adultes.each do | adulte | %>
-      <div class="col-md-offset-4 col-md-4">
-      <div class="card mb-5 mb-lg-0">
-        <div class="card-body">
-          <h5 class="card-title text-muted text-uppercase text-center"><%= adulte.title%></h5>
-           <h6 class="card-price text-center"><%= adulte.price%> € <span class="period"><br>+  20 € de frais d'adhésion annuelle</span></h6>
-          <hr>
-          <ul class="fa-ul">
-            <li><span class="fa-li"><i class="fas fa-check"></i></span><%= adulte.nbpers %> Personne(s)/ séance</li>
-            <li><span class="fa-li"><i class="fas fa-check"></i></span><%= adulte.nbseance %> cours/semaine </li>
-            <li><span class="fa-li"><i class="fas fa-check"></i></span><%= adulte.periode %> </li>
-             <li><span class="fa-li"><i class="fas fa-check"></i></span><%= adulte.duree %> minutes</li>
-           </ul>
-          <h4><%= button_to "Choisissez- moi ! ", adulte_path(adulte), :class => "btn btn-block btn-primary text-uppercase", :method => :get %></h4>
+        <div class="col-md-offset-4 col-md-4">
+          <div class="card mb-5 mb-lg-0">
+            <div class="card-body">
+              <% if Reservationad.where(adulte_id: adulte.id, user_id: current_user.id).count > 0 %>
+                <%=  link_to 'Faire une réservation', new_reservationad_path(adulte_id: adulte.id), class: "btn btn-block btn-primary text-uppercase"  %>
+              <% else %>
+                <h5 class="card-title text-muted text-uppercase text-center"><%= adulte.title%></h5>
+                <h6 class="card-price text-center"><%= adulte.price%> € <span class="period"><br>+  20 € de frais d'adhésion annuelle</span></h6>
+                <hr>
+                <ul class="fa-ul">
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span><%= adulte.nbpers %> Personne(s)/ séance</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span><%= adulte.nbseance %> cours/semaine </li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span><%= adulte.periode %> </li>
+                   <li><span class="fa-li"><i class="fas fa-check"></i></span><%= adulte.duree %> minutes</li>
+                 </ul>
+                 <h4><%= button_to "Choisissez- moi ! ", adulte_path(adulte), :class => "btn btn-block btn-primary text-uppercase", :method => :get %></h4>
+              <% end %>
+            </div>
           </div>
         </div>
-      </div>
       <% end %>
-
     </div>
   </div>
 </section>

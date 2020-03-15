@@ -40,5 +40,5 @@ class Reservationpetit < ApplicationRecord
 
   def set_nb_resa
    self.nb_resa = self.nagepetit.nbseance
- end
+  end
 end
