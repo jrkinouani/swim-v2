@@ -41,24 +41,27 @@
   <div class="container">
     <div class="row">
       <% @aquabikes.each do | aquabike | %>
-      <div class="col-lg-4 col-lg-offset-1">
-      <div class="card mb-5 mb-lg-0">
-        <div class="card-body">
-          <h5 class="card-title text-muted text-uppercase text-center"><%= aquabike.title%></h5>
-           <h6 class="card-price text-center"><%= aquabike.price%> € <span class="period"><br> +  20 € de frais d'adhésion annuelle</span></h6>
-          <hr>
-          <ul class="fa-ul">
-            <li><span class="fa-li"><i class="fas fa-check"></i></span><%= aquabike.nbpers %> Personne(s)/ séance</li>
-            <li><span class="fa-li"><i class="fas fa-check"></i></span><%= aquabike.nbseances %> cours/semaine </li>
-            <li><span class="fa-li"><i class="fas fa-check"></i></span><%= aquabike.periode %> </li>
-             <li><span class="fa-li"><i class="fas fa-check"></i></span><%= aquabike.duree %> minutes</li>
-           </ul>
-          <h4><%= button_to "Choisissez- moi ! ", aquabike_path(aquabike), :class => "btn btn-block btn-primary text-uppercase", :method => :get %></h4>
+        <div class="col-lg-4 col-lg-offset-1">
+          <div class="card mb-5 mb-lg-0">
+            <div class="card-body">
+              <% if Reservation.where(aquabike_id: aquabike.id, user_id: current_user.id).count > 0 %>
+                <%=  link_to 'Faire une réservation', new_reservation_path(aquabike_id: aquabike.id), class: "btn btn-block btn-primary text-uppercase"  %>
+              <% else %>
+                <h5 class="card-title text-muted text-uppercase text-center"><%= aquabike.title%></h5>
+                <h6 class="card-price text-center"><%= aquabike.price%> € <span class="period"><br> +  20 € de frais d'adhésion annuelle</span></h6>
+                <hr>
+                <ul class="fa-ul">
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span><%= aquabike.nbpers %> Personne(s)/ séance</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span><%= aquabike.nbseances %> cours/semaine </li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span><%= aquabike.periode %> </li>
+                   <li><span class="fa-li"><i class="fas fa-check"></i></span><%= aquabike.duree %> minutes</li>
+                 </ul>
+                <h4><%= button_to "Choisissez- moi ! ", aquabike_path(aquabike), :class => "btn btn-block btn-primary text-uppercase", :method => :get %></h4>
+              <% end %>
+            </div>
           </div>
         </div>
-      </div>
       <% end %>
-
     </div>
   </div>
 </section>
