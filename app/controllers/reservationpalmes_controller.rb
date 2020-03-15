@@ -1,5 +1,7 @@
 class ReservationpalmesController < ApplicationController
   before_action :set_reservationpalme, only: [:show, :destroy, :edit, :update]
+  before_action :authenticate_user!
+
 
   def index
     @reservationpalmes = Reservationpalme.includes(:palme).all
@@ -24,6 +26,8 @@ class ReservationpalmesController < ApplicationController
   def new
     @palme = Palme.find(params[:palme_id])
     @reservationpalme = Reservationpalme.new
+    @selected_resa = SelectedResa.where(user_id: current_user.id, resource_id: @palme.id, resource_type: 'Palme')
+    @selected_resa_count = Reservationpalme.where(palme_id: @palme.id).sum(:nb_resa) - @selected_resa.count
   end
 
   def create

@@ -14,7 +14,8 @@
             <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @palme.periode %> Occasionnel </li>
              <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @palme.duree %> minutes</li>
            </ul>
-           <%= link_to 'Faire une réservation', new_reservationpalme_path(palme_id: @palme.id), class: "btn btn-primary navbar-btn", id: "btn_car_show"%>
+           <%= render partial: 'charges/form', locals: {resource: @palme, resa_type: 'Reservationpalme'} %>
+           <%# link_to 'Faire une réservation', new_reservationpalme_path(palme_id: @palme.id), class: "btn btn-primary navbar-btn", id: "btn_car_show"%>
         </div>
        </div>
     </div>

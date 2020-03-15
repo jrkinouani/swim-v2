@@ -33,19 +33,22 @@
         <div class="card mb-5 mb-lg-0">
           <div class="card-body">
             <% @palmes.each do | palme | %>
-            <h5 class="card-title text-muted text-uppercase text-center"><%= palme.title%></h5>
-             <h6 class="card-price text-center"><%=  palme.price%> €<span class="period"><br>+  20 € de frais d'adhésion annuelle</span></h6>
-            <hr>
-            <ul class="fa-ul">
-              <li><span class="fa-li"><i class="fas fa-check"></i></span><%=  palme.nbpers %> Personne (s) maxi/séance</li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span><%=  palme.nbseance %> cours </li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span><%=  palme.periode %> </li>
-               <li><span class="fa-li"><i class="fas fa-check"></i></span><%=  palme.duree %> minutes</li>
-
-             </ul>
-            <h4><%= button_to "Reservez maintenant",  palme_path( palme), :class => "btn btn-block btn-primary text-uppercase", :method => :get %></h4>
+              <% if Reservationpalme.where(palme_id: palme.id, user_id: current_user.id).count > 0 %>
+                <%=  link_to 'Faire une réservation', new_reservationpalme_path(palme_id: palme.id), class: "btn btn-block btn-primary text-uppercase"  %>
+              <% else %>
+                <h5 class="card-title text-muted text-uppercase text-center"><%= palme.title%></h5>
+                  <h6 class="card-price text-center"><%=  palme.price%> €<span class="period"><br>+  20 € de frais d'adhésion annuelle</span></h6>
+                <hr>
+                <ul class="fa-ul">
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span><%=  palme.nbpers %> Personne (s) maxi/séance</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span><%=  palme.nbseance %> cours </li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span><%=  palme.periode %> </li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span><%=  palme.duree %> minutes</li>
+                </ul>
+                <h4><%= button_to "Reservez maintenant",  palme_path( palme), :class => "btn btn-block btn-primary text-uppercase", :method => :get %></h4>
+              <% end %>
+            <% end %>
           </div>
-          <% end %>
         </div>
       </div>
     </div>
