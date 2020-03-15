@@ -1,5 +1,6 @@
 class ReservationpetitsController < ApplicationController
   before_action :set_reservationpetit, only: [:show, :destroy, :edit, :update]
+  before_action :authenticate_user!
 
   def index
     @reservationpetits = Reservationpetit.includes(:palme).all
@@ -24,6 +25,8 @@ class ReservationpetitsController < ApplicationController
   def new
     @nagepetit = Nagepetit.find(params[:nagepetit_id])
     @reservationpetit = Reservationpetit.new
+    @selected_resa = SelectedResa.where(user_id: current_user.id, resource_id: @nagepetit.id, resource_type: 'Nagepetit')
+    @selected_resa_count = Reservationpetit.where(nagepetit_id: @nagepetit.id).sum(:nb_resa) - @selected_resa.count
   end
 
   def create

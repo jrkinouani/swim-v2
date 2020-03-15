@@ -14,7 +14,8 @@
             <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @nagepetit.periode %> Occasionnel </li>
              <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @nagepetit.duree %> minutes</li>
            </ul>
-           <%= link_to 'Faire une réservation', new_reservationpetit_path(nagepetit_id: @nagepetit.id), class: "btn btn-primary navbar-btn", id: "btn_car_show"%>
+           <%= render partial: 'charges/form', locals: {resource: @nagepetit, resa_type: 'Reservationpetit'} %>
+           <%# link_to 'Faire une réservation', new_reservationpetit_path(nagepetit_id: @nagepetit.id), class: "btn btn-primary navbar-btn", id: "btn_car_show"%>
 
         </div>
        </div>
