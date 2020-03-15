@@ -14,7 +14,8 @@
             <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @aquagym.periode %>  </li>
              <li><span class="fa-li"><i class="fas fa-check"></i></span><%= @aquagym.duree %> minutes</li>
            </ul>
-           <%= link_to 'Faire une réservation', new_reservationgym_path(aquagym_id: @aquagym.id), class: "btn btn-primary navbar-btn", id: "btn_car_show"%>
+           <%= render partial: 'charges/form', locals: {resource: @aquagym, resa_type: 'Reservationgym'} %>
+           <%# link_to 'Faire une réservation', new_reservationgym_path(aquagym_id: @aquagym.id), class: "btn btn-primary navbar-btn", id: "btn_car_show"%>
         </div>
        </div>
     </div>

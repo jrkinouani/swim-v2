@@ -1,5 +1,6 @@
 class ReservationgymsController < ApplicationController
   before_action :set_reservationgym, only: [:show, :destroy, :edit, :update]
+  before_action :authenticate_user!
 
   def index
     @reservationgyms = Reservationgym.includes(:aquabike).all
@@ -24,6 +25,8 @@ class ReservationgymsController < ApplicationController
   def new
     @aquagym = Aquagym.find(params[:aquagym_id])
     @reservationgym = Reservationgym.new
+    @selected_resa = SelectedResa.where(user_id: current_user.id, resource_id: @aquagym.id, resource_type: 'Aquagym')
+    @selected_resa_count = Reservationgym.where(aquagym_id: @aquagym.id).sum(:nb_resa) - @selected_resa.count
   end
 
   def create

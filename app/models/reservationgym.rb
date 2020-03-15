@@ -1,6 +1,7 @@
 class Reservationgym < ApplicationRecord
   validate :limit_personne
   belongs_to :aquagym
+  before_create :set_nb_resa
 
 
   def self.list_creneau
@@ -19,5 +20,23 @@ class Reservationgym < ApplicationRecord
     if Reservationgym.creneau_limit[creneau] ==  Reservationgym.where(creneau: creneau).count
       errors.add(:creneau, "Ce créneau est complet")
     end
+  end
+
+  def self.list_events
+    {
+       0 => [], #dimanche
+       1 => [], #lundi
+       2 => ["19h05 - 20h"], #mardi
+       3 => [], #mercredi
+       4 => ["19h05 - 20h"], #jeudi
+       5 => [], #vendredi
+       6 => ["13h - 13h45"], #samedi
+    }
+  end
+
+  private
+
+  def set_nb_resa
+   self.nb_resa = self.aquagym.nbseance
   end
 end
