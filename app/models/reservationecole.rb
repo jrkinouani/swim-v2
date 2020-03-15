@@ -1,6 +1,7 @@
 class Reservationecole < ApplicationRecord
   belongs_to :ecole
   validate :limit_personne
+  before_create :set_nb_resa
 
   def self.list_creneau
      ["selectionnez un créneau",
@@ -31,5 +32,24 @@ class Reservationecole < ApplicationRecord
      if Reservationecole.creneau_limit[creneau] ==  Reservationecole.where(creneau: creneau).count
        errors.add(:creneau, "complet, choisissez un autre créneau")
      end
+   end
+
+   def self.list_events
+     {
+        0 => [], #dimanche
+        1 => ["16h35 - 17h20 (6-8 ans)"], #lundi
+        2 => ["16h35 - 17h20 (Grd débutant 5-7 ans)", "17h25 - 18h10 (9-12 ans)"], #mardi
+        3 => ["14H - 14h45 (6 -8 ans)", "14h45 -15h30 (9-12 ans)"], #mercredi
+        4 => [], #jeudi
+        5 => ["16h35 - 17h 20 (6-8ans)", "17h25 -18h10 (9-12 ans)", "18h15 -19h (Ados 12-17 ans)"], #vendredi
+        6 => [], #samedi
+
+     }
+   end
+
+   private
+
+   def set_nb_resa
+     self.nb_resa = self.ecole.nbseance
    end
 end

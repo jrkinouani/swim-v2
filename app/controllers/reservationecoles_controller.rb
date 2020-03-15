@@ -1,5 +1,6 @@
 class ReservationecolesController < ApplicationController
   before_action :set_reservationecole, only: [:show, :destroy, :edit, :update]
+  before_action :authenticate_user!
 
   def index
     @reservationecoles = Reservationecole.includes(:ecole).all
@@ -24,6 +25,8 @@ class ReservationecolesController < ApplicationController
   def new
     @ecole = Ecole.find(params[:ecole_id])
     @reservationecole = Reservationecole.new
+    @selected_resa = SelectedResa.where(user_id: current_user.id, resource_id: @ecole.id)
+    @selected_resa_count = Reservationecole.where(ecole_id: @ecole.id).sum(:nb_resa) - @selected_resa.count
   end
 
   def create

@@ -82,7 +82,7 @@ class ChargesController < ApplicationController
    # @reservation = Reservation.find(params["reservation_id"])
    # Notifier.paiement(@reservation).deliver
 
-   @reservation = @resa_type.constantize.create("#{params[:resource_name]}_id" => params[:resource_id] )
+   @reservation = @resa_type.constantize.create("#{params[:resource_name]}_id" => params[:resource_id], user_id: current_user.id )
 
   rescue Stripe::CardError => e
      flash[:error] = e.message
