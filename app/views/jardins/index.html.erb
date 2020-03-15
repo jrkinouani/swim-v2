@@ -46,19 +46,23 @@
         <div class="card mb-5 mb-lg-0">
           <div class="card-body">
             <% @jardins.each do | jardin | %>
-            <h5 class="card-title text-muted text-uppercase text-center"><%= jardin.title%></h5>
-             <h6 class="card-price text-center"><%=  jardin.price%> €<span class="period"><br>+  20 € de frais d'adhésion annuelle</span></h6>
-            <hr>
-            <ul class="fa-ul">
-              <li><span class="fa-li"><i class="fas fa-check"></i></span><%=  jardin.nbpers %> Personne (s) maxi/ séance</li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span><%=  jardin.nbseance %> cours/semaine </li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span><%=  jardin.periode %> </li>
-               <li><span class="fa-li"><i class="fas fa-check"></i></span><%=  jardin.duree %> minutes</li>
+              <% if Reservationjard.where(jardin_id: jardin.id, user_id: current_user.id).count > 0 %>
+                <%=  link_to 'Faire une réservation', new_reservationjard_path(jardin_id: jardin.id), class: "btn btn-block btn-primary text-uppercase"  %>
+              <% else %>
+                <h5 class="card-title text-muted text-uppercase text-center"><%= jardin.title%></h5>
+                <h6 class="card-price text-center"><%=  jardin.price%> €<span class="period"><br>+  20 € de frais d'adhésion annuelle</span></h6>
+                <hr>
+                <ul class="fa-ul">
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span><%=  jardin.nbpers %> Personne (s) maxi/ séance</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span><%=  jardin.nbseance %> cours/semaine </li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span><%=  jardin.periode %> </li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span><%=  jardin.duree %> minutes</li>
 
-             </ul>
-            <h4><%= button_to "Reservez maintenant",  jardin_path( jardin), :class => "btn btn-block btn-primary text-uppercase", :method => :get %></h4>
+                 </ul>
+                <h4><%= button_to "Reservez maintenant",  jardin_path( jardin), :class => "btn btn-block btn-primary text-uppercase", :method => :get %></h4>
+              <% end %>
+            <% end %>
           </div>
-          <% end %>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 class ReservationjardsController < ApplicationController
   before_action :set_reservationjard, only: [:show, :destroy, :edit, :update]
+  before_action :authenticate_user!
 
   def index
     @reservationjards = Reservationjard.includes(:jardin).all
@@ -24,6 +25,8 @@ class ReservationjardsController < ApplicationController
   def new
     @jardin = Jardin.find(params[:jardin_id])
     @reservationjard = Reservationjard.new
+    @selected_resa = SelectedResa.where(user_id: current_user.id, resource_id: @jardin.id, resource_type: 'Jardin')
+    @selected_resa_count = Reservationjard.where(jardin_id: @jardin.id).sum(:nb_resa) - @selected_resa.count
   end
 
   def create
