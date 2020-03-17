@@ -15,7 +15,7 @@
                 <% next if date < Time.now.yesterday %>
                 <% Reservationgym.list_events[date.wday]&.each do |meeting| %>
                   <div class="margin-top">
-                    <% next if SelectedResa.where(user_id: current_user.id, resource_id: @aquagym.id).where("date = ? AND title = ?",  DateTime.parse(date.to_s), meeting).count >= @aquagym.nbpers%>
+                    <% next if SelectedResa.where(resource_id: @aquagym.id).where("date = ? AND title = ?",  DateTime.parse(date.to_s), meeting).count >= @aquagym.nbpers%>
                     <%= link_to selected_resa_index_path(resource_id: @aquagym.id, date: date, title: meeting, resource_name: 'Reservationgym', resource_type: 'aquagym_id', resa_url: aquagym_path(@aquagym)), method: :post, remote: true do  %>
                       <button type="button" class="btn btn-primary">
                         <%= meeting %>

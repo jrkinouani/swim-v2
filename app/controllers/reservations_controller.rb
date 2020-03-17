@@ -26,7 +26,7 @@ class ReservationsController < ApplicationController
     @aquabike = Aquabike.find(params[:aquabike_id])
     @reservation = Reservation.new
     @selected_resa = SelectedResa.where(user_id: current_user.id, resource_id: @aquabike.id, resource_type: 'Aquabike')
-    @selected_resa_count = Reservation.where(aquabike_id: @aquabike.id).sum(:nb_resa) - @selected_resa.count
+    @selected_resa_count = Reservation.where(aquabike_id: @aquabike.id, user_id: current_user.id).sum(:nb_resa) - @selected_resa.count
   end
 
   def create

@@ -26,7 +26,7 @@ class ReservationecolesController < ApplicationController
     @ecole = Ecole.find(params[:ecole_id])
     @reservationecole = Reservationecole.new
     @selected_resa = SelectedResa.where(user_id: current_user.id, resource_id: @ecole.id, resource_type: 'Ecole')
-    @selected_resa_count = Reservationecole.where(ecole_id: @ecole.id).sum(:nb_resa) - @selected_resa.count
+    @selected_resa_count = Reservationecole.where(ecole_id: @ecole.id, user_id: current_user.id).sum(:nb_resa) - @selected_resa.count
   end
 
   def create

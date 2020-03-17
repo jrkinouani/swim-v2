@@ -26,7 +26,7 @@ class ReservationjardsController < ApplicationController
     @jardin = Jardin.find(params[:jardin_id])
     @reservationjard = Reservationjard.new
     @selected_resa = SelectedResa.where(user_id: current_user.id, resource_id: @jardin.id, resource_type: 'Jardin')
-    @selected_resa_count = Reservationjard.where(jardin_id: @jardin.id).sum(:nb_resa) - @selected_resa.count
+    @selected_resa_count = Reservationjard.where(jardin_id: @jardin.id, user_id: current_user.id).sum(:nb_resa) - @selected_resa.count
   end
 
   def create

@@ -16,7 +16,7 @@
                 <% next if date < Time.now.yesterday %>
                 <% Reservationpetit.list_events[date.wday]&.each do |meeting| %>
                   <div class="margin-top">
-                    <% next if SelectedResa.where(user_id: current_user.id, resource_id: @nagepetit.id).where("date = ? AND title = ?",  DateTime.parse(date.to_s), meeting).count >= @nagepetit.nbpers%>
+                    <% next if SelectedResa.where(resource_id: @nagepetit.id).where("date = ? AND title = ?",  DateTime.parse(date.to_s), meeting).count >= @nagepetit.nbpers%>
                     <%= link_to selected_resa_index_path(resource_id: @nagepetit.id, date: date, title: meeting, resource_name: 'Reservationpetit', resource_type: 'nagepetit_id', resa_url: nagepetit_path(@nagepetit)), method: :post, remote: true do  %>
                       <button type="button" class="btn btn-primary">
                         <%= meeting %>

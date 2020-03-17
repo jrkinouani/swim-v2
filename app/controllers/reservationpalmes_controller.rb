@@ -27,7 +27,7 @@ class ReservationpalmesController < ApplicationController
     @palme = Palme.find(params[:palme_id])
     @reservationpalme = Reservationpalme.new
     @selected_resa = SelectedResa.where(user_id: current_user.id, resource_id: @palme.id, resource_type: 'Palme')
-    @selected_resa_count = Reservationpalme.where(palme_id: @palme.id).sum(:nb_resa) - @selected_resa.count
+    @selected_resa_count = Reservationpalme.where(palme_id: @palme.id, user_id: current_user.id).sum(:nb_resa) - @selected_resa.count
   end
 
   def create

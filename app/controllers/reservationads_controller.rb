@@ -26,7 +26,7 @@ class ReservationadsController < ApplicationController
     @adulte = Adulte.find(params[:adulte_id])
     @reservationad = Reservationad.new
     @selected_resa = SelectedResa.where(user_id: current_user.id, resource_id: @adulte.id, resource_type: 'Adulte')
-    @selected_resa_count = Reservationpetit.where(nagepetit_id: @adulte.id).sum(:nb_resa) - @selected_resa.count
+    @selected_resa_count = Reservationpetit.where(nagepetit_id: @adulte.id, user_id: current_user.id).sum(:nb_resa) - @selected_resa.count
   end
 
   def create
