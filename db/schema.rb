@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191121113900) do
+ActiveRecord::Schema.define(version: 20200315230146) do
 
   create_table "adhesions", force: :cascade do |t|
     t.string "name"
@@ -166,7 +166,10 @@ ActiveRecord::Schema.define(version: 20191121113900) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "price"
+    t.integer "user_id"
+    t.integer "nb_resa"
     t.index ["adulte_id"], name: "index_reservationads_on_adulte_id"
+    t.index ["user_id"], name: "index_reservationads_on_user_id"
   end
 
   create_table "reservationboxings", force: :cascade do |t|
@@ -202,7 +205,10 @@ ActiveRecord::Schema.define(version: 20191121113900) do
     t.integer "ecole_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "nb_resa"
+    t.integer "user_id"
     t.index ["ecole_id"], name: "index_reservationecoles_on_ecole_id"
+    t.index ["user_id"], name: "index_reservationecoles_on_user_id"
   end
 
   create_table "reservationgyms", force: :cascade do |t|
@@ -214,7 +220,10 @@ ActiveRecord::Schema.define(version: 20191121113900) do
     t.string "name"
     t.string "phone"
     t.string "creneau"
+    t.integer "user_id"
+    t.integer "nb_resa"
     t.index ["aquagym_id"], name: "index_reservationgyms_on_aquagym_id"
+    t.index ["user_id"], name: "index_reservationgyms_on_user_id"
   end
 
   create_table "reservationjards", force: :cascade do |t|
@@ -226,7 +235,10 @@ ActiveRecord::Schema.define(version: 20191121113900) do
     t.integer "jardin_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "nb_resa"
     t.index ["jardin_id"], name: "index_reservationjards_on_jardin_id"
+    t.index ["user_id"], name: "index_reservationjards_on_user_id"
   end
 
   create_table "reservationpalmes", force: :cascade do |t|
@@ -238,7 +250,10 @@ ActiveRecord::Schema.define(version: 20191121113900) do
     t.integer "palme_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "nb_resa"
     t.index ["palme_id"], name: "index_reservationpalmes_on_palme_id"
+    t.index ["user_id"], name: "index_reservationpalmes_on_user_id"
   end
 
   create_table "reservationpetits", force: :cascade do |t|
@@ -251,7 +266,10 @@ ActiveRecord::Schema.define(version: 20191121113900) do
     t.integer "nagepetit_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "nb_resa"
     t.index ["nagepetit_id"], name: "index_reservationpetits_on_nagepetit_id"
+    t.index ["user_id"], name: "index_reservationpetits_on_user_id"
   end
 
   create_table "reservationpolos", force: :cascade do |t|
@@ -275,7 +293,10 @@ ActiveRecord::Schema.define(version: 20191121113900) do
     t.string "name"
     t.string "phone"
     t.string "creneau"
+    t.integer "user_id"
+    t.integer "nb_resa"
     t.index ["aquabike_id"], name: "index_reservations_on_aquabike_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "reservationstatics", force: :cascade do |t|
@@ -300,6 +321,17 @@ ActiveRecord::Schema.define(version: 20191121113900) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["nagesynchro_id"], name: "index_reservationsynchros_on_nagesynchro_id"
+  end
+
+  create_table "selected_resas", force: :cascade do |t|
+    t.datetime "date"
+    t.integer "resource_id"
+    t.integer "user_id"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "resource_type"
+    t.index ["user_id"], name: "index_selected_resas_on_user_id"
   end
 
   create_table "staticswims", force: :cascade do |t|
