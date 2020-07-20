@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'polos/index'
   get 'polos/show'
 
+  resources :profils, only: [:show]
 
 
   get 'staticswims/show'

@@ -1,29 +1,45 @@
-<h2>Sign up</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-4 col-md-4" id="page_signup">
+<h2>Bienvenue sur Swimnatation</h2><br> <h4>Créer un compte</h4>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <label for="">Votre prénom</label>
+    <br />
+    <%= f.text_field :first_name, autofocus: true,class:"form-control"  %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+  <label for="">Votre nom </label><br />
+    <%= f.text_field :last_name, autofocus: true,class:"form-control"  %>
+  </div>
+
+  <div class="field">
+    <label for="">Votre email</label><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"form-control"  %>
+  </div>
+
+  <div class="field">
+  <label for="">Votre mot de passe</label>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em> <br><br>8 caractères minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password",class:"form-control"  %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <label for="">Confirmez votre mot de passe</label><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",class:"form-control"  %>
   </div>
-
+<br>
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Valider" %>
   </div>
 <% end %>
-
-<%= render "users/shared/links" %>
+<h5><%=link_to "Déjà inscrit ?, conectez-vous ",  new_user_session_path%></h5>
+</div>
+</div>
+</div>

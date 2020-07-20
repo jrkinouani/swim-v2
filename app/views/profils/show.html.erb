@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+          <div class="panel panel-default">
+          <div class="panel-heading">Qui suis-je</div>
+            <div class="panel-body">
+              <h4><%= @user.first_name.capitalize %>  <%= @user.last_name.capitalize %></h4>
+              <h4><%= link_to 'Modifier mon profil', edit_user_registration_path %></h4>
+
+              <br>
+            </div>
+          </div>
+      </div>
+   </div>
+</div>

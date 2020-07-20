@@ -1,43 +1,64 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container">
+  <div class="row" >
+    <div class="text-center">
+      <h2>Modifiez votre profil</h2>
+    </div>
+    <div class="col-md-offset-2 col-md-4" id="page_signup">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
+    <div class="field">
+       <label for="edit">Votre prénom</label><br />
+      <%= f.text_field :first_name, autofocus: true,class:"form-control"  %>
+    </div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+     <label for="edit">votre nom</label><br />
+    <%= f.text_field :last_name, autofocus: true,class:"form-control"  %>
+  </div>
+
+  <div class="field">
+    <label for="edit">votre email</label><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"form-control"  %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email  %></div>
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <label for="edit">votre mot de passe</label><br/> <br/>
+ <i>(laissez vide si vous ne voulez pas le changer)</i><br />
+    <%= f.password_field :password, autocomplete: "nouveau mot de passe" ,class:"form-control" %>
     <% if @minimum_password_length %>
       <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <em><%= @minimum_password_length %> 8 lettres minimum</em>
     <% end %>
   </div>
+</div>
+    <div class=" col-md-4" id="page_signup">
+    <div class="field">
+      <label for="edit">confirmez votre mot de passe </label>
+      <br />
+      <%= f.password_field :password_confirmation, autocomplete: "nouveau mot de passe" ,class:"form-control" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="field">
+      <label for="edit">votre mot de passe actuel</label><br/> <br/>
+      <span>(Rentrez votre mote de passe pour valider les changements)</span><br />
+      <%= f.password_field :current_password, autocomplete: "current-password" ,class:"form-control" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
+      <div class="actions">
+        <%= f.submit "Mise à jour" %>
+      </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+    <h3>Annulez mon compte</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+      <p>Mon sommes triste de votre départ :-( <%= button_to "Annulez mon compte", registration_path(resource_name), data: { confirm: "Etês-vous sûre ?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+      <%= link_to "Retour", :back %>
+  </div>
+  </div>
+  </div>
