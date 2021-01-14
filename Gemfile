@@ -14,7 +14,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'devise'
-gem 'rails_admin', '~> 1.3'
+gem 'rails_admin', '~> 1.4'
 gem 'stripe'
 gem "simple_calendar", "~> 2.0"
 
